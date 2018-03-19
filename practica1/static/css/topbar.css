@@ -1,5 +1,6 @@
 body{
     margin:0px;
+    background-color: #002156;
 }
 
 .topbar{
@@ -9,7 +10,7 @@ body{
     vertical-align: middle;
     text-align: center;
     display: inline-block;
-    background: linear-gradient(to bottom right,  #87CEFA, #4169E1);
+    background: linear-gradient(to bottom,  #FFFFFF, #DFDFDF);
     box-shadow: 1px 0px 10px 0px #000000;
 }
 
@@ -36,8 +37,7 @@ body{
 .topbar #gym-name h1{
     font-family: helvetica;
     font-size: 7vh;
-    color: #ffffff;
-    text-shadow: 0px 0px 20px #111133; 
+    color: #002156;
 }
     
 .topbar .login-info{

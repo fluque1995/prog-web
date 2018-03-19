@@ -1,7 +1,6 @@
-
 .main-body{
     display: flex;
-    align-items: top;
+    align-items: center;
     vertical-align: top;
 }
 .main-body #main-image{
@@ -20,6 +19,7 @@
     color: #FFFFFF;
     position: absolute;
     text-align: center;
+    text-shadow: 10px 1px 1px 1px #000000;
     font-size: 2vw;
     width: 48vw;
     top: 33%;
@@ -33,44 +33,35 @@
     width: 49vw;
 }
 
+.main-body .navigation-links .main-link{
+    display: inline-block;
+    box-sizing: border-box;
+    width: 49vw;
+    padding-top: 1vh;
+    margin-top: .7vw;
+    text-decoration: none;
+    font-family: helvetica;
+    border-radius: 1vh;
+    font-weight: bold;
+    color: black;
+    background: linear-gradient(to bottom,  #EEEEEE, #DDDDDD);
+    transition: all 0.2s;    
+}
+
 @media (min-aspect-ratio: 5/3){
     .main-body .navigation-links .main-link{
-	display: inline-block;
-	box-sizing: border-box;
-	width: 49vw;
 	height: 6vh;
-	padding-top: 1vh;
 	font-size: 3vh;
-	margin-top: .7vw;
-	text-decoration: none;
-	font-family: helvetica;
-	font-weight: bold;
-	color: black;
-	background: linear-gradient(to bottom right,  #EEEEEE, #AAAAEE);
-	transition: all 0.3s;    
     }
 }
 
 @media (max-aspect-ratio: 5/3){
     .main-body .navigation-links .main-link{
-	display: inline-block;
-	box-sizing: border-box;
-	width: 49vw;
 	height: 4vh;
-	padding-top: 1vh;
 	font-size: 2vh;
-	margin-top: .7vw;
-	text-decoration: none;
-	font-family: helvetica;
-	font-weight: bold;
-	color: black;
-	background: linear-gradient(to bottom right,  #EEEEEE, #AAAAEE);
-	transition: all 0.3s;    
     }
 }
 
-
 .main-body .navigation-links .main-link:hover{
-    color: white;
-    background: #111111;
+    transform: scale(1.03);
 }
