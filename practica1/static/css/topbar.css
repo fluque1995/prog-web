@@ -1,0 +1,157 @@
+body{
+    margin:0px;
+}
+
+.topbar{
+    width: 100vw;
+    height: 20vh;
+    margin: auto;
+    vertical-align: middle;
+    text-align: center;
+    display: inline-block;
+    background: linear-gradient(to bottom right,  #87CEFA, #4169E1);
+    box-shadow: 1px 0px 10px 0px #000000;
+}
+
+.topbar #logo{
+    padding: 3vh 5vw 3vh 5vw;
+    float: left;
+    width: 8vw;
+    vertical-align: middle;
+}
+
+.topbar #logo-link{
+    padding: 1vh 5vw 1vh 5vw;
+    width: 8vw;
+    float: left;
+    vertical-align: middle;
+}
+
+.topbar #gym-name{
+    display: inline-block;
+    text-align: center;
+    float: center;
+}
+
+.topbar #gym-name h1{
+    font-family: helvetica;
+    font-size: 7vh;
+    color: #ffffff;
+    text-shadow: 0px 0px 20px #111133; 
+}
+    
+.topbar .login-info{
+    float: right;
+    margin-top: .5vw;
+    margin-bottom: .5vw;
+    margin-right: 3vw;
+    display: inline-block;
+    background-color: #FFFFFF;
+    border-radius: 2vw;
+    overflow: hidden;
+    text-align: center;
+    width: 15vw;
+    height: 18vh;
+
+}
+
+.topbar .login-info h2{
+    text-align: center;
+    font-family: arial;
+    font-size: 1.2vw;
+    background-color: #191970;
+    padding-top: .6vw;
+    padding-bottom: .6vw;
+    margin: 0px;
+    color: #FFFFFF;
+}
+
+.topbar fieldset{
+    border: 0;
+}
+
+.topbar .login-info p{
+    font-family: helvetica;
+}
+
+.topbar .login-info .form-input{
+    padding: .3vh 1vw .3vh 1vw;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    width: 10vw;
+    background-color: #DDDDDD;
+    border-radius: 1vw;
+    text-align: center;
+    border: 0px;
+}
+
+.topbar .login-info #logout-button{
+    margin-top: .25vw;
+    border: 0px;
+    padding: .5em 2.5vw .5em 2.5vw;
+    border-radius: 1vw;
+    width: 10vw;
+    background-color: #57b846;
+    color: #ffffff;
+    transition: all 0.3s;
+}
+
+.topbar .login-info #logout-button:hover{
+    background-color: #111111;
+}
+
+.topbar .login-form{
+    float: right;
+    margin-top: .5vw;
+    margin-bottom: .5vw;
+    margin-right: 3vw;
+    display: inline-block;
+    background-color: #FFFFFF;
+    border-radius: 2vw;
+    overflow: hidden;
+    text-align: center;
+    width: 15vw;
+    height: 18vh;
+
+}
+
+.topbar .login-form h2{
+    text-align: center;
+    font-family: arial;
+    font-size: 1.2vw;
+    background-color: #191970;
+    padding-top: .6vw;
+    padding-bottom: .6vw;
+    margin: 0px;
+    color: #FFFFFF;
+}
+
+.topbar fieldset{
+    border: 0;
+}
+
+.topbar .login-form .form-input{
+    padding: .3vh 1vw .3vh 1vw;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    width: 10vw;
+    background-color: #DDDDDD;
+    border-radius: 1vw;
+    text-align: center;
+    border: 0px;
+}
+
+.topbar .login-form #login-button{
+    margin-top: .25vw;
+    border: 0px;
+    padding: .5em 2.5vw .5em 2.5vw;
+    border-radius: 1vw;
+    width: 10vw;
+    background-color: #57b846;
+    color: #ffffff;
+    transition: all 0.3s;
+}
+
+.topbar .login-form #login-button:hover{
+    background-color: #111111;
+}

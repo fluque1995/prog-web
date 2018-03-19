@@ -1,0 +1,38 @@
+
+footer{
+    position: relative;
+    width: 100vw;
+    height: 13vh;
+    bottom: 0px;
+    background-color: #5f5f5f;
+}
+
+#contact .glyphicon-phone{
+    position: absolute;
+    top: 25%;
+    left: 10%;
+    width: 1em;
+}
+
+#contact .glyphicon-mail{
+    position: absolute;
+    top: 63%;
+    left: 10%;
+    width: 1em;
+}
+
+#contact #phone{
+    position: absolute;
+    font-family: helvetica;
+    color: white;
+    top: 10%;
+    left: 12%;
+}
+
+#contact #mail{
+    position: absolute;
+    font-family: helvetica;
+    color: white;
+    top: 47%;
+    left: 12%;
+}
