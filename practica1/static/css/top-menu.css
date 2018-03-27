@@ -1,0 +1,29 @@
+.top-menu{
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+    position: sticky;
+    top: 0;
+    background-color: #dddddd;
+    overflow: hidden;
+}
+
+.top-menu li{
+    display: inline;
+}
+
+.top-menu a {
+    font-family: helvetica;
+    font-size: 1.3vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    padding-top: 4vh;
+    padding-bottom: 4vh;
+    margin: 0px;
+    color: #191970;
+    text-decoration: none;
+}
+
+.top-menu a:hover {
+    color: #FFFFFF;
+    background-color: #191950;
+}
