@@ -2,6 +2,7 @@
     padding-top: 3vh;
     padding-bottom: 3vh;
     position: sticky;
+    z-index: 1000;
     top: 0;
     background-color: #dddddd;
     overflow: hidden;

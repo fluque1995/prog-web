@@ -25,13 +25,14 @@
     margin: .5vh .5vw .5vh .5vw;
     background-color: #FFFFFF;
     border-radius: 1vw;
+    margin-bottom: 4vh;
 }
 
 table {
     display: inline-block;
     vertical-align: center;
     border-collapse: collapse;
-    margin: 1vh;
+    margin: 4vh;
 }
 .main-body td, .main-body th{
     padding: 1vh 2vw 1vh 2vw;
