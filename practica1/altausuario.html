@@ -70,17 +70,16 @@
 	    <br>
 	  </fieldset>
 	  <header>
-	    <h1>INFORMACIÓN ADICIONAL</h1>
+	    <h1>INFORMACIÓN ADICIONAL (OPCIONAL)</h1>
 	  </header>
 	  <fieldset>
-	    <input list="browsers" placeholder="Escoja su navegador">
-	    <datalist id="browsers">
-	      <option value="Internet Explorer">
-	      <option value="Firefox">
-	      <option value="Chrome">
-	      <option value="Opera">
-	      <option value="Safari">
-	    </datalist>
+	    <select class="form-input dropdown-input" id="cause" placeholder="foo">
+	      <option value="" disabled selected>¿Cómo nos conoció?</option>
+	      <option value="internet">A través de un anuncio en internet</option>
+	      <option value="radio">A través de un anuncio en la radio</option>
+	      <option value="recommendation">Recomendación de un conocido</option>
+	      <option value="propaganda">Me dieron un información en la calle</option>
+	    </select>
 	  </fieldset>
 	  <input type="submit" class="button" id="login-button" value="Enviar">
 	  <input type="reset" class="button" id="reset-button" value="Limpiar formulario">

@@ -61,6 +61,11 @@
     border: 1px solid #101060;
 }
 
+.main-body .signup-form .dropdown-input{
+    appearance: none;
+    -webkit-appearance: none;
+}
+
 .main-body .signup-form .long-form-input{
     box-sizing: border-box;
     padding: 2vh 2vw 2vh 2vw;
