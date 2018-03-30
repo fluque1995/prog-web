@@ -39,26 +39,70 @@
     color: #FFFFFF;
 }
 
+.main-body .signup-form fieldset{
+    border: none;
+}
+
 .main-body .signup-form .form-input{
-    padding: 2vh 10vw 2vh 2vw;
+    box-sizing: border-box;
+    padding: 2vh 2vw 2vh 2vw;
     margin-top: 1vh;
     margin-bottom: 1vh;
-    width: 10vw;
+    width: 22vw;
+    background-color: #FAFAFA;
+    border-radius: 2vw;
+    text-align: left;
+    border: 1px solid #DDDDDD;
+    font-family: helvetica;
+}
+
+.main-body .signup-form .form-input:focus{
+    outline: none;
+    border: 1px solid #101060;
+}
+
+.main-body .signup-form .long-form-input{
+    box-sizing: border-box;
+    padding: 2vh 2vw 2vh 2vw;
+    font-family: helvetica;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    width: 22vw;
+    height: 20vh;
+    resize: none;
     background-color: #FAFAFA;
     border-radius: 2vw;
     text-align: left;
     border: 1px solid #DDDDDD;
 }
 
-.main-body .signup-form .long-form-input{
+.main-body .signup-form .long-form-input:focus{
+    outline: none;
+    border: 1px solid #101060;
+}
+
+.main-body .signup-form .button{
     box-sizing: border-box;
-    padding: 1vh 1vw 1vh 1vw;
-    width: 40%;
-    margin-top: 1vh;
-    margin-bottom: 1vh;
     width: 10vw;
-    background-color: #FAFAFA;
+    margin: 1vh 1vw 2vh 1vw;
+    height: 4vh;
     border-radius: 2vw;
-    text-align: left;
-    border: 1px solid #DDDDDD;
+    border: none;
+    color: white;
+}
+
+.main-body .signup-form .button:focus{
+    outline: none;
+}
+
+.main-body .signup-form .button#login-button{
+    background-color: #57b846;
+}
+
+.main-body .signup-form .button#reset-button{
+    background-color: #d9534f;
+}
+
+.main-body .signup-form .button:hover{
+    background-color: #111111;
 }

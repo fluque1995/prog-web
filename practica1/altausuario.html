@@ -54,6 +54,7 @@
 	    <input type="text" class="form-input" id="population" placeholder="Localidad">
 	    <br>
 	    <input type="text" class="form-input" id="province" placeholder="Provincia">
+	    <br>
 	  </fieldset>
 	  <header>
 	    <h1>DATOS DE USUARIO</h1>
@@ -66,8 +67,23 @@
 	    <input type="password" class="form-input" id="password1" placeholder="Contraseña">
 	    <br>
 	    <input type="password" class="form-input" id="password2" placeholder="Repita la contraseña">
-	  </fieldset>	  
-	  <input type="submit" id="login-button" value="Enviar">
+	    <br>
+	  </fieldset>
+	  <header>
+	    <h1>INFORMACIÓN ADICIONAL</h1>
+	  </header>
+	  <fieldset>
+	    <input list="browsers" placeholder="Escoja su navegador">
+	    <datalist id="browsers">
+	      <option value="Internet Explorer">
+	      <option value="Firefox">
+	      <option value="Chrome">
+	      <option value="Opera">
+	      <option value="Safari">
+	    </datalist>
+	  </fieldset>
+	  <input type="submit" class="button" id="login-button" value="Enviar">
+	  <input type="reset" class="button" id="reset-button" value="Limpiar formulario">
 	</form>
       </section>
     </section>
