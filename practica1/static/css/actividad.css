@@ -1,6 +1,9 @@
 .main-body{
+    display: block;
     text-align: center;
     font-family: helvetica;
+    overflow: hidden;
+    height: auto;
 }
 
 .main-body .content-list-container{
@@ -24,11 +27,13 @@
 
 
 .main-body .activity-info-container{
+    display: block;
     float: left;
     width: 60%;
 }
 
 .main-body .activity-info{
+    box-sizing: border-box;
     width: 90%;
     margin: auto;
     border-radius: 1vw;
@@ -37,14 +42,15 @@
 
 .main-body .activity-info img{
     margin-top: 2vh;
-    width: 40vw;
+    margin-bottom: 2vh;
+    width: 30vw;
 }
 
 .main-body .content-list{
     box-sizing: border-box;
     display: block;
     width: 100%;
-    max-height: 45vh;
+    height: 115vh;
     float: left;
     overflow: auto;
 }
@@ -57,6 +63,13 @@
     margin: .5vh .5vw .5vh .5vw;
     background-color: #FFFFFF;
     border-radius: 1vw;
+}
+
+.main-body .activity-description{
+    margin: auto;
+    width: 80%;
+    text-align: left;
+    margin-bot: 2vh;
 }
 
 .main-body .activity-container img{
@@ -79,14 +92,4 @@
 .main-body .activity-container .text h1, .main-body .activity-container a{
     margin: 4vh 0px 4vh 2vw;
     font-size: 2.5vh;
-}
-
-.main-body .news-container{
-    box-sizing: border-box;
-    width: 90%;
-    height: 30vh;
-    display: inline-block;
-    margin: .5vh .5vw .5vh .5vw;
-    background-color: #FFFFFF;
-    border-radius: 1vw;
 }
