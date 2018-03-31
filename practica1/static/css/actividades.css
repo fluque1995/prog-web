@@ -70,3 +70,26 @@
     margin: 4vh 0px 4vh 2vw;
     font-size: 2.5vh;
 }
+
+.main-body .news-container{
+    box-sizing: border-box;
+    width: 90%;
+    height: 30vh;
+    display: inline-block;
+    margin: .5vh .5vw .5vh .5vw;
+    background-color: #FFFFFF;
+    border-radius: 1vw;
+}
+
+.main-body .news-container h1, .main-body .news-container p{
+    margin: 3vh 2vw 1vh 2vw;	
+    float: left;
+}
+
+.main-body .news-container h1{
+    font-size: 2vh;
+}
+.main-body .news-container p{
+    text-align: left;
+    font-size: 1.5vh;
+}
