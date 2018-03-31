@@ -3,9 +3,18 @@
     font-family: helvetica;   
 }
 
-.main-body .activity-list-container{
+.main-body .content-list-container{
     width: 50%;
 }
+
+.main-body #activities-list{
+    float: left;
+}
+
+.main-body #news-list{
+    float: right;
+}
+
 .main-body .ribbon{
     display: inline-block;
     box-sizing: border-box;
@@ -17,14 +26,17 @@
     border-radius: 2vw;
 }
 
-.main-body .activities-list{
+.main-body .content-list{
     box-sizing: border-box;
     display: block;
     width: 100%;
     max-height: 45vh;
     float: left;
-    direction: rtl;
     overflow: auto;
+}
+
+.main-body #activities-list{
+    direction: rtl;
 }
 
 .main-body .activity-container{
