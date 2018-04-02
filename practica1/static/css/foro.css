@@ -1,0 +1,20 @@
+.main-body{
+    text-align: center;
+    font-family: helvetica;   
+}
+
+.main-body .ribbon{
+    font-family: helvetica;
+    background-color: #FFFFFF;
+    box-sizing: border-box;
+    font-size: 5vh;
+    color: #002156;
+    padding-top: 2vh;
+    padding-right: 25vw;
+    padding-left: 25vw;
+    padding-bottom: 2vh;
+    margin: 1vh 2vw 1vh 2vw;
+    border-radius: 2vw;
+
+}
+.main-
