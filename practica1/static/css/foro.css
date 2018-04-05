@@ -3,18 +3,38 @@
     font-family: helvetica;   
 }
 
-.main-body .ribbon{
-    font-family: helvetica;
+.main-body .ribbon-forum{
     background-color: #FFFFFF;
-    box-sizing: border-box;
-    font-size: 5vh;
-    color: #002156;
-    padding-top: 2vh;
-    padding-right: 25vw;
-    padding-left: 25vw;
-    padding-bottom: 2vh;
+    padding-right: 5vw;
+    padding-left: 5vw;
     margin: 1vh 2vw 1vh 2vw;
     border-radius: 2vw;
-
 }
-.main-
+
+.main-body .ribbon{
+    display: inline-block;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    margin: 0px;
+    font-size: 5vh;
+    font-family: helvetica;
+    color: #002156;
+}
+
+.main-body .ribbon-forum .button{
+    display: inline-block;
+    position: absolute;
+    right: 5vw;
+    margin-top: 3vh;
+    border: 0px;
+    padding: 1vh 0px 1vh 0px;
+    border-radius: 1vw;
+    width: 10vw;
+    background-color: #57b846;
+    color: #ffffff;
+    transition: all 0.3s;
+}
+
+.main-body .ribbon-forum .button:hover{
+    background-color: #111111;
+}
