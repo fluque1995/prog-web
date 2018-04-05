@@ -38,3 +38,34 @@
 .main-body .ribbon-forum .button:hover{
     background-color: #111111;
 }
+
+.main-body .forum-threads-container{
+    border-radius: 1vw;
+    background-color: #FFFFFF;
+    margin: 1vh 2vw 1vh 2vw;
+    text-align: left;
+}
+
+.main-body .forum-threads-container hr{
+    width: 90%;
+}
+
+.main-body .forum-thread img{
+    display: inline-block;
+    vertical-align: middle;
+    height: 10vh;
+    margin-left: 4vw;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+    background-color: #FFFFFF;    
+}
+
+.main-body .forum-thread h1{
+    margin-left: 5vw;
+    display: inline;
+}
+
+.main-body .forum-thread p{
+    margin-left: 5vw;
+    display: inline;
+}
