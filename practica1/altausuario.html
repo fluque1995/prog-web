@@ -45,28 +45,32 @@
 	    <h1>DATOS PERSONALES</h1>
 	  </header>
 	  <fieldset>
-	    <input type="text" class="form-input" id="name" placeholder="Nombre">
+	    <input type="text" class="form-input" id="name" placeholder="Nombre" required>
 	    <br>
-	    <input type="text" class="form-input" id="family-name" placeholder="Apellidos">
+	    <input type="text" class="form-input" id="family-name" placeholder="Apellidos" required>
 	    <br>
-	    <textarea class="long-form-input" cols="80" rows="5" id="address" placeholder="Dirección"></textarea>
+	    <textarea class="long-form-input" cols="80" rows="5" id="address" placeholder="Dirección" required></textarea>
 	    <br>
-	    <input type="text" class="form-input" id="population" placeholder="Localidad">
+	    <input type="text" class="form-input" id="population" placeholder="Localidad" required>
 	    <br>
-	    <input type="text" class="form-input" id="province" placeholder="Provincia">
+	    <input type="text" class="form-input" id="province" placeholder="Provincia" required>
 	    <br>
+	    <section class="form-input-button">
+	      <p>Foto de perfil</p>
+	      <input type="file" required>
+	    </section>
 	  </fieldset>
 	  <header>
 	    <h1>DATOS DE USUARIO</h1>
 	  </header>
 	  <fieldset>
-	    <input type="text" class="form-input" id="username" placeholder="Nombre de usuario">
+	    <input type="text" class="form-input" id="username" placeholder="Nombre de usuario" required>
 	    <br>
-	    <input type="email" class="form-input" id="email" placeholder="Correo electrónico">
+	    <input type="email" class="form-input" id="email" placeholder="Correo electrónico" required>
 	    <br>
-	    <input type="password" class="form-input" id="password1" placeholder="Contraseña">
+	    <input type="password" class="form-input" id="password1" placeholder="Contraseña" required>
 	    <br>
-	    <input type="password" class="form-input" id="password2" placeholder="Repita la contraseña">
+	    <input type="password" class="form-input" id="password2" placeholder="Repita la contraseña" required>
 	    <br>
 	  </fieldset>
 	  <header>
@@ -78,7 +82,7 @@
 	      <option value="internet">A través de un anuncio en internet</option>
 	      <option value="radio">A través de un anuncio en la radio</option>
 	      <option value="recommendation">Recomendación de un conocido</option>
-	      <option value="propaganda">Me dieron un información en la calle</option>
+	      <option value="propaganda">Me dieron información en la calle</option>
 	    </select>
 	  </fieldset>
 	  <input type="submit" class="button" id="login-button" value="Enviar">

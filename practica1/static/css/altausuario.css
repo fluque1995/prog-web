@@ -100,6 +100,33 @@
     outline: none;
 }
 
+.main-body .signup-form .form-input-button{
+    box-sizing: border-box;
+    padding: 2vh 2vw 2vh 2vw;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    width: 22vw;
+    background-color: #FAFAFA;
+    border-radius: 2vw;
+    text-align: left;
+    border: 1px solid #DDDDDD;
+    font-family: helvetica;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-input-button p{
+    color: #909090;
+    font: 400 13.3333px Arial;
+    display: inline;
+}
+    
+.form-input-button input{
+    display: inline;
+    float: right;
+}
+
 .main-body .signup-form .button#login-button{
     background-color: #57b846;
 }
