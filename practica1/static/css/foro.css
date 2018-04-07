@@ -21,11 +21,11 @@
     color: #002156;
 }
 
-.main-body .ribbon-forum .button{
+.main-body .button{
     display: inline-block;
     position: absolute;
-    right: 5vw;
     margin-top: 3vh;
+    right: 5vw;
     border: 0px;
     padding: 1vh 0px 1vh 0px;
     border-radius: 1vw;
@@ -33,9 +33,10 @@
     background-color: #57b846;
     color: #ffffff;
     transition: all 0.3s;
+    vertical-align: center;
 }
 
-.main-body .ribbon-forum .button:hover{
+.main-body .button:hover{
     background-color: #111111;
 }
 
@@ -64,6 +65,12 @@
     vertical-align: middle;
     display: inline-block;
     margin-left: 2vw;
+    box-sizing: border-box;
+    width: 10vw;
+}
+
+.user-info h1{
+    font-size: 2vh;
 }
 
 .user-info p{
@@ -74,4 +81,11 @@
     vertical-align: middle;
     display: inline-block;
     margin-left: 2vw;
+    box-sizing: border-box;
+    width: 55vw;
 }
+
+.main-body .thread-info h1{
+    font-size: 2vh;
+}
+
