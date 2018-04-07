@@ -60,12 +60,18 @@
     background-color: #FFFFFF;    
 }
 
-.main-body .forum-thread h1{
-    margin-left: 5vw;
-    display: inline;
+.user-info{
+    vertical-align: middle;
+    display: inline-block;
+    margin-left: 2vw;
 }
 
-.main-body .forum-thread p{
-    margin-left: 5vw;
-    display: inline;
+.user-info p{
+    font-size: 1vw;
+}
+
+.main-body .thread-info{
+    vertical-align: middle;
+    display: inline-block;
+    margin-left: 2vw;
 }
