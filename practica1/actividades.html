@@ -3,23 +3,27 @@
   <head>
     <meta charset="UTF-8">
     <meta name="author" content="Francisco Luque">
-    <link rel="stylesheet" type="text/css" href="static/css/topbar.css">
-    <link rel="stylesheet" type="text/css" href="static/css/top-menu.css">
-    <link rel="stylesheet" type="text/css" href="static/css/actividades.css">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" media="(max-width: 768px)" href="static/css/mobile/topbar.css">
+    <link rel="stylesheet" type="text/css" media="(min-width: 768px)" href="static/css/topbar.css">
+
+    <link rel="stylesheet" type="text/css" media="(max-width: 768px)" href="static/css/mobile/top-menu.css">
+    <link rel="stylesheet" type="text/css" media="(min-width: 768px)" href="static/css/top-menu.css">
+    <link rel="stylesheet" type="text/css" media="(max-width: 768px)" href="static/css/mobile/actividades.css">
+    <link rel="stylesheet" type="text/css" media="(min-width: 768px)" href="static/css/actividades.css">
     <link rel="stylesheet" type="text/css" href="static/css/footer.css">
     <title>Awesome gym</title>
   </head>
   <body>
     <header class="topbar">
-      <a href="index2.html">
-        <img src="static/imgs/logo.png" id="logo" alt="Volver al inicio">
-      </a>
       <section id="gym-name">
         <h1>AWESOME GYM</h1>
       </section>
+      <a href="index2.html">
+        <img src="static/imgs/logo.png" id="logo" alt="Volver al inicio">
+      </a>
       <section class="login-info">
         <h2>BIENVENIDO</h2>
-        <br>
         <p>Usuario: fluque1995</p>
         <a href="index.html">
           <button type="button" action="index.html" id="logout-button">Salir</button>
