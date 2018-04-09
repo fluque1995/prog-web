@@ -5,15 +5,8 @@
 
 .main-body .content-list-container{
     width: 100%;
-}
-
-.main-body #activities-list{
-    float: left;
-    direction: rtl;
-}
-
-.main-body #news-list{
-    float: right;
+    display: block;
+    overflow: hidden;
 }
 
 .main-body .ribbon{
@@ -42,7 +35,9 @@
     display: inline-block;
     margin: .5vh .5vw .5vh .5vw;
     background-color: #FFFFFF;
-    border-radius: 1vw;
+    border-radius: 2vw;
+    height: auto;
+    overflow: auto;
 }
 
 .main-body .activity-container img{

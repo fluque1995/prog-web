@@ -1,6 +1,6 @@
 .main-body{
     text-align: center;
-    font-family: helvetica;   
+    font-family: helvetica;
 }
 
 .main-body .content-list-container{
@@ -79,7 +79,7 @@
 }
 
 .main-body .news-container h1, .main-body .news-container p{
-    margin: 3vh 2vw 1vh 2vw;	
+    margin: 3vh 2vw 1vh 2vw;
     float: left;
 }
 
