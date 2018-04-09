@@ -44,7 +44,6 @@ body{
     text-align: center;
     width: 25vw;
     height: 15vh;
-
 }
 
 .topbar .login-info h2{
@@ -95,23 +94,22 @@ body{
 
 .topbar .login-form{
     float: right;
-    margin-top: .5vw;
-    margin-bottom: .5vw;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
     margin-right: 3vw;
     display: inline-block;
     background-color: #FFFFFF;
     border-radius: 2vw;
     overflow: hidden;
     text-align: center;
-    width: 15vw;
-    height: 18vh;
-
+    width: 25vw;
+    height: 15vh;
 }
 
 .topbar .login-form h2{
     text-align: center;
     font-family: arial;
-    font-size: 1.2vw;
+    font-size: 1.5vh;
     background-color: #191970;
     padding-top: .6vw;
     padding-bottom: .6vw;
@@ -125,13 +123,18 @@ body{
 
 .topbar .login-form .form-input{
     padding: .3vh 1vw .3vh 1vw;
-    margin-top: 1vh;
-    margin-bottom: 1vh;
-    width: 10vw;
+    margin-top: .5vh;
+    margin-bottom: .5vh;
+    width: 15vw;
+    height: 1.3vh;
     background-color: #DDDDDD;
     border-radius: 1vw;
     text-align: center;
     border: 0px;
+}
+
+.topbar .login-form .form-input::-webkit-input-placeholder{
+    font-size: 1.3vh;
 }
 
 .topbar .login-form #login-button{
@@ -139,7 +142,9 @@ body{
     border: 0px;
     padding: .5em 2.5vw .5em 2.5vw;
     border-radius: 1vw;
-    width: 10vw;
+    width: 15vw;
+    height: 3vh;
+    font-size: 1.3vh;
     background-color: #57b846;
     color: #ffffff;
     transition: all 0.3s;
