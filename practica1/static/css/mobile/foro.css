@@ -1,0 +1,92 @@
+.main-body{
+    text-align: center;
+    font-family: helvetica;
+}
+
+.main-body .ribbon-forum{
+    background-color: #FFFFFF;
+    margin: 1vh 2vw 1vh 2vw;
+    border-radius: 2vw;
+}
+
+.main-body .ribbon{
+    display: inline-block;
+    margin: 0px;
+    font-size: 5vh;
+    font-family: helvetica;
+    color: #002156;
+}
+
+.main-body .button{
+    display: inline-block;
+    position: absolute;
+    margin-top: 1vh;
+    right: 5vw;
+    border: 0px;
+    padding: 1vh 0px 1vh 0px;
+    border-radius: 1vw;
+    width: 20%;
+    background-color: #57b846;
+    color: #ffffff;
+    transition: all 0.3s;
+    vertical-align: center;
+}
+
+.main-body .button:hover{
+    background-color: #111111;
+}
+
+.main-body .forum-thread .button{
+    position: relative;
+    left: 75%;
+    top: 4%;
+}
+
+.main-body .forum-threads-container{
+    border-radius: 1vw;
+    background-color: #FFFFFF;
+    margin: 1vh 2vw 1vh 2vw;
+    text-align: left;
+}
+
+.main-body .forum-threads-container hr{
+    width: 90%;
+}
+
+.main-body .forum-thread img{
+    display: inline-block;
+    vertical-align: middle;
+    height: 10vh;
+    margin-left: 4vw;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+    background-color: #FFFFFF;
+}
+
+.user-info{
+    vertical-align: middle;
+    display: inline-block;
+    margin-left: 1vw;
+    box-sizing: border-box;
+    width: 35%;
+}
+
+.user-info h1{
+    font-size: 2vh;
+}
+
+.user-info p{
+    font-size: 2vh;
+}
+
+.main-body .thread-info{
+    vertical-align: middle;
+    display: inline-block;
+    margin-left: 2vw;
+    box-sizing: border-box;
+    width: 90%;
+}
+
+.main-body .thread-info h1{
+    font-size: 2vh;
+}
