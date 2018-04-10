@@ -1,0 +1,37 @@
+.main-body{
+    vertical-align: center;
+    text-align: center;
+}
+
+.main-body .ribbon{
+    display: inline-block;
+    box-sizing: border-box;
+    width: 90%;
+    font-size: 5vh;
+    margin: 1vh 0vw 1vh 0vw;
+    color: #002156;
+    background-color: #FFFFFF;
+    border-radius: 2vw;
+    font-family: helvetica;
+}
+
+.main-body .service-container{
+    box-sizing: border-box;
+    width: 90%;
+    height: 20%;
+    display: inline-block;
+    margin: .5vh .5vw .5vh .5vw;
+    background-color: #FFFFFF;
+    border-radius: 1vw;
+}
+
+.main-body .service-container .photo{
+    margin-top: 1vh;
+    height: 20vh;
+    border-radius: 1vw;
+}
+
+.main-body .service-container h1{
+    font-family: helvetica;
+    color: #002156;
+}

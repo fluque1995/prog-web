@@ -49,7 +49,7 @@ body{
 .topbar .login-info h2{
     text-align: center;
     font-family: arial;
-    font-size: 2vh;
+    font-size: 2.5vw;
     background-color: #191970;
     padding-top: .6vw;
     padding-bottom: .6vw;
@@ -109,7 +109,7 @@ body{
 .topbar .login-form h2{
     text-align: center;
     font-family: arial;
-    font-size: 1.5vh;
+    font-size: 2.2vw;
     background-color: #191970;
     padding-top: .6vw;
     padding-bottom: .6vw;
