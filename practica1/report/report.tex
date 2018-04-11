@@ -1,0 +1,244 @@
+\documentclass[11pt]{article}
+\renewcommand{\baselinestretch}{1.05}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{lipsum}
+
+\usepackage{amsmath,amsthm,verbatim,amssymb,amsfonts,amscd}
+\usepackage{graphicx, wrapfig}
+\usepackage{float}
+\usepackage{caption, subcaption}
+\usepackage{tkz-fct}
+\usetikzlibrary{babel}
+\usepackage{pgfplots}
+\usepackage{enumitem}
+\usepackage{multicol, vwcol}
+\usepackage{listingsutf8}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{biblatex}
+\bibliography{bibliography.bib}
+\definecolor{lightgray}{gray}{0.95}
+
+\hypersetup{
+    bookmarks=true,         % show bookmarks bar?
+    unicode=false,          % non-Latin characters in Acrobat’s bookmarks
+    pdftoolbar=true,        % show Acrobat’s toolbar?
+    pdfmenubar=true,        % show Acrobat’s menu?
+    pdffitwindow=false,     % window fit to page when opened
+    pdfstartview={FitH},    % fits the width of the page to the window
+    pdftitle={Programación web - Práctica 1},    % title
+    pdfauthor={Francisco Luque},     % author
+    pdfsubject={Programación web},   % subject of the document
+    pdfnewwindow=true,      % links in new PDF window
+    colorlinks=true,        % false: boxed links; true: colored links
+    linkcolor=red,          % color of internal links (change box color with linkbordercolor)
+    citecolor=cyan,         % color of links to bibliography
+    filecolor=magenta,      % color of file links
+    urlcolor=blue           % color of external links
+}
+
+\setlength{\parindent}{0pt}
+\topmargin0.0cm
+\headheight0.0cm
+\headsep0.0cm
+\oddsidemargin0.0cm
+\textheight23.0cm
+\textwidth16.5cm
+\footskip1.0cm
+\theoremstyle{plain}
+
+\newtheorem{theorem}{Teorema}
+\newtheorem{corollary}{Corolario}
+\newtheorem{lemma}{Lema}
+\newtheorem{proposition}{Proposición}
+\theoremstyle{definition}
+\newtheorem{definition}{Definición}
+\newtheorem{example}{Ejemplo}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+
+\begin{document}
+
+\title{Programación Web - Práctica 1\\
+  DGIIM \\
+  \large Creación de una página web utilizando HTML y CSS}
+\author{Francisco Luque Sánchez}
+\maketitle
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.3\textwidth]{html_css.png}
+\end{figure}
+
+\tableofcontents
+
+\section{Introducción}
+
+En esta práctica se ha desarrollado una página web para un gimnasio
+utilizando HTML y CSS. Se ha tratado de crear una web responsive, de
+forma que se vea correctamente en pantallas con distinta proporción
+(concretamente, en pantallas de proporción 4:3 y 16:9, a una
+resolución de $1024 \times 768$ y $1920 \times 1080$ respectivamente)
+y dispositivos móviles.\\
+
+Pasamos a comentar con mayor profundidad el desarrollo de dicha web.
+
+\section{Estructura HTML de la página}
+
+La página se ha estructurado en las siguientes secciones:
+
+\begin{itemize}
+\item Inicio (\texttt{index.html}): Es la página a la que se accede
+  por primera vez, cuando se accede al sitio web. En esta página no se
+  puede hacer nada, y los enlaces que hay en ella redirigen de nuevo a
+  esa página principal. Este es el comportamiento que se busca en la
+  página para los usuarios que no están identificados. En dicha página
+  se permite únicamente que el usuario se identifique. El sistema de
+  identificación está simulado, ya que ahora mismo no tenemos las
+  herramientas para gestionar un sistema de identificación (un
+  lenguaje como PHP).
+\item Inicio identificado (\texttt{index2.html}): Es la página a la
+  que accede el usuario después de identificarse en el sistema. En
+  futuras prácticas, esta página dejará de tener sentido, ya que con
+  el index original será suficiente. Los enlaces se activarán en dicho
+  index cuando el usuario esté identificado. En esta práctica, el
+  \texttt{index2.html} es una página idéntica al \texttt{index.html},
+  pero en la que el usuario aparece identificado, y los enlaces al
+  resto de páginas están activos.
+\item Actividades (\texttt{actividades.html}): Página en la que se ve
+  la información sobre las actividades que se llevan a cabo en el
+  gimnasio.  Además, aparece información sobre noticias que tienen que
+  ver con el gimnasio.  Dentro de la página de actividades tenemos
+  enlaces a cada una de las actividades citadas, en la que podemos ver
+  información detallada sobre la misma, como su descripción y el
+  horario.
+\item Horario (\texttt{horario.html}): En esta página se puede
+  consultar el horario del gimnasio.
+\item Técnicos (\texttt{tecnicos.html}): Página que muestra el
+  personal que trabaja en el centro.
+\item Servicios (\texttt{servicios.html}): Página que muestra los
+  servicios ofertados por el gimasio, así como sus instalaciones.
+\item Localización (\texttt{localizacion.html}): Página en la que se
+  muestra la localización del centro, utilizando un mapa creado con
+  \textit{Google Maps}.
+\item Precios (\texttt{precios.html}): Página que permite consultar
+  los distintos planes ofertados por el gimnasio para sus clientes.
+\item Alta usuarios (\texttt{altausuario.html}): Página que tiene un
+  formulario que permite a una persona crearse un nuevo usuario en el
+  sistema. Dicho formulario no tiene ninguna funcionalidad
+  actualmente, ya que como hemos comentado anteriormente no disponemos
+  de un lenguaje de programación que nos permita gestionar los datos
+  introducidos. Esta funcionalidad se implementará en futuras
+  prácticas.
+\item Foro (\texttt{foro.html}): En esta página se ha simulado el
+  funcionamiento de un foro. En ella se observan los hilos creados por
+  distintos usuarios, y se permite acceder a dos nuevas páginas:
+  \begin{itemize}
+  \item Crear hilo (\texttt{crearhilo.html}): Aquí se muestra un
+    formulario que permite la creación de un hilo nuevo, introduciendo
+    su título y la descripción
+  \item Responder hilo (\texttt{responderhilo.html}): Este formulario
+    permite responder a un hilo ya existente.
+  \end{itemize}
+  Al igual que los anteriores, estos formularios carecen de
+  funcionalidad actualmente, funcionalidad que se implementará más
+  adelante.
+\end{itemize}
+
+Una vez explicada la estructura de archivos HTML, vamos a ver cómo está
+organizado el CSS de la página.
+
+\section{Archivos CSS de la página}
+
+Pasamos a ver los archivos CSS que se han utilizado en la página. Se
+han creado dos conjuntos de archivos distintos, unos que se cargan
+cuando la página web se está consultando desde un ordenador (la
+anchura de la página es mayor a 768 píxeles) y otros que se cargan
+cuando se accede a la página desde ún móvil (la anchura del
+dispositivo es menor a 768 píxeles). Para un desarrollo realmente
+completo se habría tenido que especificar la configuración para otros
+tamaños, pero dado que lo que se pretende con la práctica es aprender
+el funcionamiento básico de CSS no se ha profundizado más en este
+apartado. En realidad, si lo que se busca es crear un página
+completamente responsive, crear el CSS desde cero es una tarea muy
+costosa, y probablemente, teniendo en cuenta la cantidad de
+dispositivos distintos que existen actualmente, cada uno con sus
+dimensiones particulares, sería prácticamente imposible que la
+visualización fuera perfecta en todos ellos. Usualmente, lo que se
+hace en estos casos es utilizar librerías ya creadas que se preocupan
+en que el diseño de las páginas web sea completamente responsive. De
+esta forma, el desarrollador web no tiene que preocuparse de que la
+página se visualice correctamente en todos los dispositivos, sino que
+es la propia librería la que le aporta las herramientas para
+conseguirlo de forma cómoda. Un ejemplo de estas librerías,
+probablemente la más extendida, es \textit{Bootstrap}
+\cite{bootstrap}, desarrollada por el equipo de \textit{Twitter}.
+
+Veamos a continuación los diferentes archivos CSS que se utilizan en
+la página web:
+
+\begin{itemize}
+\item \texttt{topbar.css}: En este CSS se establece el estilo de la
+  barra superior de la página, en la que se muestra el logo de la
+  misma, el nombre del gimnasio, y la información sobre la
+  autenticación del usuario.
+\item \texttt{top-menu.css}: En este CSS se establece el estilo del
+  menú superior, que aparece en todas las páginas excepto en la
+  principal, y es la que nos permite movernos por todo el sitio
+  web. Una particularidad de este menú es que se ha conseguido que al
+  descender por la página, el mismo ocupe siempre la parte superior,
+  de forma que siempre sea visible.  Así, aunque un usuario se
+  encuentre en la parte inferior de una página, podrá dirigirse a otra
+  página sin tener que volver a subir. Esto se consigue con una
+  combinación de la propiedad \texttt{position: sticky}, que permite
+  desplazar un elemento con el resto de la página cuando al hacer
+  \texttt{scroll} debería quedarse oculto, y la propiedad
+  \texttt{z-index}, que permite que un elemento quede por encima del
+  resto cuando se superponen.
+\item \texttt{footer.css}: En este CSS se establece el estilo del pie
+  de página. Este componente se puede observar en la parte inferior de
+  todas las páginas. Se han desarrollado dos clases distintas para el
+  pie. Una de ellas se mantiene en la parte inferior de la página
+  independientemete del tamaño que ocupe el contenido de la misma, que
+  se usa en las páginas en las que el contenido no rellena
+  completamente la pantalla, como la página de inicio o la página de
+  actividades. La otra coloca el footer debajo de todo el
+  contenido. Esto se ha hecho para que, en las páginas que hay poco
+  contenido, se rellene la pantalla completamente, a fin de no romper
+  la estética de la misma.
+\item Archivos \texttt{nombre-pagina.css}: Por cada página HTML que
+  hay creada, se tiene además un archivo CSS en el que se especifica
+  el estilo del contenido que hay en la página. Se ha optado por
+  organizar el CSS de esta forma porque cada página tiene un contenido
+  específico y distinto de las demás. De esta manera, la estructura de
+  archivos permite encontrar el CSS referente a cada página de forma
+  más sencilla, por si hay que realizar alguna modificación. Se podría
+  haber optado, en algunos casos, por utilizar la misma hoja de
+  estilos para más de una página, como es el caso de las páginas
+  \texttt{servicios.html} y \texttt{tecnicos.html}, en los que la
+  estructura que siguen ambas es muy similar. No obstante, se ha optado
+  finalmente por la organización separada, para poder controlar de
+  forma independiente ambas páginas en caso de que fuera necesario.
+\end{itemize}
+
+Los archivos indicados anteriormente se encuentran en el directorio
+\texttt{static/css}. Además de estos archivos, dentro de este directorio
+se encuentra la carpeta \texttt{mobile}. En ella se encuentran los mismos
+archivos indicados anteriormente, pero en la versión móvil. De nuevo, se
+podría haber tenido un solo archivo con el CSS para cada página, y que las
+\textit{media queries} se realizasen dentro del propio CSS, pero buscando
+una organización más modular del código, dicha \textit{media query} se hace
+en el HTML, y se carga un CSS u otro dependiendo del tamaño del dispositivo
+que acceda a la página.
+
+\section{Bibliografía}
+
+\printbibliography
+
+\end{document}
