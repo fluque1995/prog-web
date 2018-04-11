@@ -19,7 +19,7 @@
 .main-body .signup-form{
     font-family: helvetica;
     box-sizing: border-box;
-    width: 50vw;
+    width: 90%;
     display: inline-block;
     overflow: hidden;
     background-color: #FFFFFF;
@@ -48,7 +48,7 @@
     padding: 2vh 2vw 2vh 2vw;
     margin-top: 1vh;
     margin-bottom: 1vh;
-    width: 22vw;
+    width: 80%;
     background-color: #FAFAFA;
     border-radius: 2vw;
     text-align: left;
@@ -72,8 +72,7 @@
     font-family: helvetica;
     margin-top: 1vh;
     margin-bottom: 1vh;
-    width: 22vw;
-    height: 20vh;
+    width: 80%;
     resize: none;
     background-color: #FAFAFA;
     border-radius: 2vw;
@@ -105,7 +104,7 @@
     padding: 2vh 2vw 2vh 2vw;
     margin-top: 1vh;
     margin-bottom: 1vh;
-    width: 22vw;
+    width: 80%;
     background-color: #FAFAFA;
     border-radius: 2vw;
     text-align: left;
@@ -121,7 +120,7 @@
     font: 400 13.3333px Arial;
     display: inline;
 }
-    
+
 .form-input-button input{
     display: inline;
     float: right;

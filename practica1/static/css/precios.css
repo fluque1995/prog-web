@@ -6,7 +6,7 @@
 .price-card{
     font-family: helvetica;
     display: inline-block;
-    width: 20vw;
+    width: 30%;
     height: 80vh;
     background-color: #ffffff;
     border-radius: 1vw;
@@ -44,7 +44,7 @@
 
 .price-card hr{
     margin: 0px 1vw 0px 1vw;
-    width: 18vw;
+    width: 90%;
 }
 
 .price-card p{
