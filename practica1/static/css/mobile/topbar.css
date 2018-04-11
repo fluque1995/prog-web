@@ -13,9 +13,10 @@ body{
 
 .topbar #logo{
     padding-left: 1vw;
-    padding-top: 3vh;
+    padding-top: 1vh;
     float: left;
-    width: 25vw;
+    max-height: 15vh;
+    max-width: 25vw;
 }
 
 .topbar #gym-name{
