@@ -76,7 +76,6 @@
   \includegraphics[width=.3\textwidth]{html_css.png}
 \end{figure}
 
-\tableofcontents
 
 \section{Introducción}
 
@@ -222,20 +221,58 @@ la página web:
   haber optado, en algunos casos, por utilizar la misma hoja de
   estilos para más de una página, como es el caso de las páginas
   \texttt{servicios.html} y \texttt{tecnicos.html}, en los que la
-  estructura que siguen ambas es muy similar. No obstante, se ha optado
-  finalmente por la organización separada, para poder controlar de
-  forma independiente ambas páginas en caso de que fuera necesario.
+  estructura que siguen ambas es muy similar. No obstante, se ha
+  optado finalmente por la organización separada, para poder controlar
+  de forma independiente ambas páginas en caso de que fuera necesario.
 \end{itemize}
 
 Los archivos indicados anteriormente se encuentran en el directorio
-\texttt{static/css}. Además de estos archivos, dentro de este directorio
-se encuentra la carpeta \texttt{mobile}. En ella se encuentran los mismos
-archivos indicados anteriormente, pero en la versión móvil. De nuevo, se
-podría haber tenido un solo archivo con el CSS para cada página, y que las
-\textit{media queries} se realizasen dentro del propio CSS, pero buscando
-una organización más modular del código, dicha \textit{media query} se hace
-en el HTML, y se carga un CSS u otro dependiendo del tamaño del dispositivo
-que acceda a la página.
+\texttt{static/css}. Además de estos archivos, dentro de este
+directorio se encuentra la carpeta \texttt{mobile}. En ella se
+encuentran los mismos archivos indicados anteriormente, pero en la
+versión móvil. De nuevo, se podría haber tenido un solo archivo con el
+CSS para cada página, y que las \textit{media queries} se realizasen
+dentro del propio CSS, pero buscando una organización más modular del
+código, dicha \textit{media query} se hace en el HTML, y se carga un
+CSS u otro dependiendo del tamaño del dispositivo que acceda a la
+página.\\
+
+En la versión móvil, lo que se ha intentado, es colocar los elementos
+que aparecen alineados horizontalmente en la versión de escritorio
+colocados en vertical. Esto se ha hecho porque, usualmente, los usuarios
+que acceden a una web desde un móvil lo hacen con el móvil colocado
+en vertical, al contrario que pasa con las pantallas de escritorio,
+que tienen una disposición apaisada. De esta forma, en la versión
+de escritorio en la pantalla de actividades aparece el listado de
+actividades a la izquierda y el de noticias a la derecha, mientras
+que en la versión móvil aparecen arriba las actividades y debajo las
+noticias.
+
+\section{Aspectos de implementación}
+
+El desarrollo de la práctica se ha realizado utilizando las
+herramientas de desarrollador que aporta \textit{Google Chrome}. Estas
+herramientas permiten cambiar, de forma cómoda, el tamaño de la
+pantalla en la que se mostraría la página. Esto permite visualizar de
+forma sencilla la página en distintos dispositivos, sin necesidad de
+tener los mismos físicamente. Es con esta herramienta con la que se ha
+trabajado para tratar de hacer una página \textit{responsive}.  Se ha
+probado la misma en todas las opciones que el navegador incluye por
+defecto, y se ha comprobado que la página se comporta bien en todas
+ellas. De esta forma podemos garantizar, de forma más o menos segura,
+que vamos a poder visualizarla correctamente en cualquier dispositivo.
+No obstante, la visualización perfecta en todos ellos es difícil de
+garantizar completamente al desarrollar el CSS completamente desde
+cero.\\
+
+En cuanto al comportamiento responsive de la página, se ha seguido una
+filosofía similar a la que sigue \textit{Bootstrap} en su desarrollo.
+Lo que se hace es tener en cuenta el ancho de la pantalla para
+redimensionar los elementos, mientras que en vertical se mantienen
+los tamaños independientemente de la altura del dispositivo. Esto se
+hace porque suele ser más natural el \textit{scroll} vertical que
+el horizontal.
+
 
 \section{Bibliografía}
 
