@@ -27,7 +27,7 @@
 
 .main-body .service-container .photo{
     margin-top: 1vh;
-    height: 20vh;
+    max-width: 80vw;
     border-radius: 1vw;
 }
 

@@ -10,9 +10,8 @@ body{
 
 .topbar{
     width: 100%;
-    height: 20%;
+    height: 200px;
     margin: auto;
-    vertical-align: middle;
     text-align: center;
     display: inline-block;
     background: linear-gradient(to bottom,  #FFFFFF, #DFDFDF);
@@ -20,17 +19,16 @@ body{
 }
 
 .topbar #logo{
-    padding: 1% 3vw 1% 3vw;
+    margin: 2em 2em 2em 2em;
     float: left;
     width: auto;
-    height: 80%;
+    height: 70%;
 }
 
 .topbar #logo-link{
-    padding: 1vh 5vw 1vh 5vw;
+    padding: 1% 3% 1% 3%;
     height: 90%;
     float: left;
-    vertical-align: middle;
 }
 
 .topbar #gym-name{
@@ -40,93 +38,33 @@ body{
 
 .topbar #gym-name h1{
     font-family: helvetica;
-    font-size: 4vw;
+    font-size: 3em;
     color: #002156;
 }
 
-.topbar .login-info{
-    float: right;
-    margin-top: .5vw;
-    margin-bottom: .5vw;
-    margin-right: 3vw;
-    display: inline-block;
-    background-color: #FFFFFF;
-    border-radius: 2vw;
-    overflow: hidden;
-    text-align: center;
-    width: 15vw;
-    height: 85%;
-
-}
-
-.topbar .login-info h2{
-    text-align: center;
-    font-family: arial;
-    font-size: 1.2vw;
-    background-color: #191970;
-    padding-top: .6vw;
-    padding-bottom: .6vw;
-    margin: 0px;
-    color: #FFFFFF;
-}
-
-.topbar fieldset{
-    border: 0;
-}
-
-.topbar .login-info p{
-    font-family: helvetica;
-    font-size: 2vh;
-}
-
-.topbar .login-info .form-input{
-    padding: .3vh 1vw .3vh 1vw;
-    margin-top: 1vh;
-    margin-bottom: 1vh;
-    width: 10vw;
-    background-color: #DDDDDD;
-    border-radius: 1vw;
-    text-align: center;
-    border: 0px;
-}
-
-.topbar .login-info #logout-button{
-    margin-top: .25vw;
-    border: 0px;
-    padding: .5em 2.5vw .5em 2.5vw;
-    border-radius: 1vw;
-    width: 10vw;
-    background-color: #57b846;
-    color: #ffffff;
-    transition: all 0.3s;
-}
-
-.topbar .login-info #logout-button:hover{
-    background-color: #111111;
-}
 
 .topbar .login-form{
     float: right;
-    margin-top: .5vw;
-    margin-bottom: .5vw;
-    margin-right: 3vw;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-right: 3%;
     display: inline-block;
     background-color: #FFFFFF;
-    border-radius: 2vw;
+    border-radius: 1em;
     overflow: hidden;
     text-align: center;
-    width: 15vw;
-    height: 90%;
+    width: 150px;
+    height: 85%;
 
 }
 
 .topbar .login-form h2{
     text-align: center;
     font-family: arial;
-    font-size: 1.2vw;
+    font-size: .8em;
     background-color: #191970;
-    padding-top: .6vw;
-    padding-bottom: .6vw;
+    padding-top: 5%;
+    padding-bottom: 5%;
     margin: 0px;
     color: #FFFFFF;
 }
@@ -136,27 +74,75 @@ body{
 }
 
 .topbar .login-form .form-input{
-    padding: .3vh 1vw .3vh 1vw;
-    margin-top: 1vh;
-    margin-bottom: 1vh;
-    width: 10vw;
+    padding: 3% 10% 3% 10%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    width: 80%;
     background-color: #DDDDDD;
-    border-radius: 1vw;
+    border-radius: 1em;
     text-align: center;
     border: 0px;
 }
 
 .topbar .login-form #login-button{
-    margin-top: .25vw;
+    margin-top: 5%;
     border: 0px;
-    padding: .5em 2.5vw .5em 2.5vw;
-    border-radius: 1vw;
-    width: 10vw;
+    padding: 3% 10% 3% 10%;
+    border-radius: 1em;
+    width: 80%;
     background-color: #57b846;
     color: #ffffff;
     transition: all 0.3s;
 }
 
 .topbar .login-form #login-button:hover{
+    background-color: #111111;
+}
+
+.topbar .login-info{
+    float: right;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-right: 3%;
+    display: inline-block;
+    background-color: #FFFFFF;
+    border-radius: 1em;
+    overflow: hidden;
+    text-align: center;
+    width: 150px;
+    height: 85%;
+
+}
+
+.topbar .login-info h2{
+    text-align: center;
+    font-family: arial;
+    font-size: .8em;
+    background-color: #191970;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    margin: 0px;
+    color: #FFFFFF;
+}
+
+.topbar .login-info p{
+    font-family: helvetica;
+    font-size: .8em;
+    margin-top: 25%;
+    margin-bottom: 25%;
+}
+
+.topbar .login-info #logout-button{
+    margin-top: 5%;
+    border: 0px;
+    padding: 3% 10% 3% 10%;
+    border-radius: 1em;
+    width: 80%;
+    background-color: #57b846;
+    color: #ffffff;
+    transition: all 0.3s;
+}
+
+.topbar .login-form #logout-button:hover{
     background-color: #111111;
 }

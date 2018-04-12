@@ -5,7 +5,7 @@
 
 .main-body .ribbon{
     font-family: helvetica;
-    font-size: 5vh;
+    font-size: 2em;
     color: #002156;
     background-color: #FFFFFF;
     padding-top: 2vh;
@@ -28,7 +28,7 @@
 
 .main-body .staff-member .photo{
     margin-top: 1vh;
-    height: 20vh;
+    width: 20vw;
     border-radius: 1vw;
 }
 

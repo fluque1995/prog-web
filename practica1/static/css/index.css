@@ -3,6 +3,7 @@
     align-items: center;
     vertical-align: top;
 }
+
 .main-body #main-image{
     width: 50vw;
     display: inline;
@@ -19,7 +20,6 @@
     color: #FFFFFF;
     position: absolute;
     text-align: center;
-    text-shadow: 10px 1px 1px 1px #000000;
     font-size: 2vw;
     width: 48vw;
     top: 33%;
@@ -36,30 +36,24 @@
 .main-body .navigation-links .main-link{
     display: inline-block;
     box-sizing: border-box;
-    width: 49vw;
-    padding-top: 1vh;
-    margin-top: .7vw;
+    width: 95%;
+    padding-top: 1.5%;
+    margin-top: 1%;
+    padding-bottom: 1.5%;
     text-decoration: none;
+    margni-bottom: 1%;
     font-family: helvetica;
-    border-radius: 1vh;
+    border-radius: 2em;
     font-weight: bold;
     color: black;
     background: linear-gradient(to bottom,  #EEEEEE, #DDDDDD);
     transition: all 0.2s;
 }
 
-@media (min-aspect-ratio: 5/3){
-    .main-body .navigation-links .main-link{
-        height: 6vh;
-        font-size: 3vh;
-    }
-}
 
-@media (max-aspect-ratio: 5/3){
-    .main-body .navigation-links .main-link{
-        height: 4vh;
-        font-size: 2vh;
-    }
+.main-body .navigation-links .main-link{
+    height: 8%;
+    font-size: 1.5em;
 }
 
 .main-body .navigation-links .main-link:hover{
