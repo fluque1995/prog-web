@@ -46,3 +46,12 @@ footer{
     top: 47%;
     left: 12%;
 }
+
+#contact #howto{
+    position: absolute;
+    text-decoration: none;
+    font-family: helvetica;
+    color: white;
+    top: 30%;
+    right: 12%;
+}

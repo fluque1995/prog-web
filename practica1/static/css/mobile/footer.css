@@ -8,14 +8,14 @@ footer{
 
 #contact .glyphicon-phone{
     position: absolute;
-    top: 25%;
+    top: 15%;
     left: 10%;
     width: .8em;
 }
 
 #contact .glyphicon-mail{
     position: absolute;
-    top: 63%;
+    top: 40%;
     left: 10%;
     width: .8em;
 }
@@ -25,7 +25,6 @@ footer{
     font-family: helvetica;
     color: white;
     font-size: .8em;
-    top: 6%;
     left: 15%;
 }
 
@@ -34,6 +33,15 @@ footer{
     font-family: helvetica;
     color: white;
     font-size: .8em;
-    top: 45%;
+    top: 24%;
     left: 15%;
+}
+
+#contact #howto{
+    position: absolute;
+    font-family: helvetica;
+    color: white;
+    font-size: .8em;
+    top: 65%;
+    left: 10%;
 }
