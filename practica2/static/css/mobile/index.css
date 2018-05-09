@@ -1,0 +1,65 @@
+.main-body{
+    align-items: center;
+    vertical-align: top;
+}
+.main-body #main-image{
+    width: 100vw;
+    display: block;
+    position: relative;
+}
+
+
+.main-body #main-image #photo{
+    margin: 1vh 0px 1vh 0px;
+    width: 100vw;
+}
+
+.main-body #main-image p{
+    color: #FFFFFF;
+    text-align: center;
+    position: absolute;
+    top: 23%;
+    text-shadow: 10px 1px 1px 1px #000000;
+    font-size: 3vh;
+    width: 100vw;
+}
+
+.main-body .navigation-links{
+    text-align: center;
+    display: block;
+    width: 100vw;
+    margin-bottom: 2vh;
+}
+
+.main-body .navigation-links .main-link{
+    display: inline-block;
+    box-sizing: border-box;
+    width: 98vw;
+    padding-top: 1vh;
+    margin-top: .7vw;
+    text-decoration: none;
+    font-family: helvetica;
+    border-radius: 1vh;
+    font-weight: bold;
+    color: black;
+    background: linear-gradient(to bottom,  #EEEEEE, #DDDDDD);
+    transition: all 0.2s;
+}
+
+@media (min-aspect-ratio: 5/3){
+    .main-body .navigation-links .main-link{
+        height: 6vh;
+        font-size: 3vh;
+    }
+}
+
+@media (max-aspect-ratio: 5/3){
+    .main-body .navigation-links .main-link{
+        height: 4vh;
+        font-size: 2vh;
+    }
+}
+
+.main-body .navigation-links .main-link:hover{
+    transform: scale(1.03);
+}

@@ -1,0 +1,42 @@
+.main-body{
+    vertical-align: center;
+    text-align: center;
+}
+
+.main-body .ribbon{
+    display: inline-block;
+    box-sizing: border-box;
+    width: 90%;
+    font-size: 5vh;
+    margin: 1vh 0vw 1vh 0vw;
+    color: #002156;
+    background-color: #FFFFFF;
+    border-radius: 2vw;
+    font-family: helvetica;
+}
+
+.main-body .location-map {
+    display: inline-block;
+    margin-top: 1vh;
+    margin-bottom: 5vh;
+    box-sizing: border-box;
+    height: 60vh;
+    width: 90vw;
+    vertical-align: middle;
+}
+
+.main-body .location-map .map-wrapper {
+    border-radius: 1vw;
+    background-color: #FFFFFF;
+    display: block;
+    position: relative;
+    padding-bottom: 120%;
+    height: 0;
+}
+.main-body .location-map .map-wrapper iframe {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+}

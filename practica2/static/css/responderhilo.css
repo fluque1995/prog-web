@@ -1,0 +1,79 @@
+.main-body{
+    vertical-align: center;
+    text-align: center;
+}
+
+.main-body .ribbon{
+    font-family: helvetica;
+    font-size: 5vh;
+    color: #002156;
+    background-color: #FFFFFF;
+    padding-top: 2vh;
+    padding-right: 25vw;
+    padding-left: 25vw;
+    padding-bottom: 2vh;
+    margin: 1vh 2vw 1vh 2vw;
+    border-radius: 2vw;
+}
+
+.main-body .response-form{
+    font-family: helvetica;
+    box-sizing: border-box;
+    width: 50vw;
+    display: inline-block;
+    overflow: hidden;
+    background-color: #FFFFFF;
+    border-radius: 1vw;
+}
+
+.main-body .response-form header{
+    text-align: left;
+    background: linear-gradient(to bottom right, #3322ff 0%, #110088 100%);
+    margin: 0px;
+    padding-top: .25vh;
+    padding-bottom: .25vh;
+}
+
+.main-body .response-form header h1{
+    margin-left: 1vw;
+    color: #FFFFFF;
+}
+
+.main-body .response-form fieldset{
+    border: none;
+}
+
+.main-body .response-form .long-form-input{
+    box-sizing: border-box;
+    padding: 2vh 2vw 2vh 2vw;
+    font-family: helvetica;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    width: 22vw;
+    height: 20vh;
+    resize: none;
+    background-color: #FAFAFA;
+    border-radius: 2vw;
+    text-align: left;
+    border: 1px solid #DDDDDD;
+}
+
+.main-body .response-form .long-form-input:focus{
+    outline: none;
+    border: 1px solid #101060;
+}
+
+.main-body .response-form .button{
+    box-sizing: border-box;
+    width: 10vw;
+    margin: 1vh 1vw 2vh 1vw;
+    height: 4vh;
+    border-radius: 2vw;
+    border: none;
+    color: white;
+    background-color: #57b846;
+}
+
+.main-body .response-form .button:hover{
+    background-color: #111111;
+}

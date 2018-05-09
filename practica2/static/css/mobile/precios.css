@@ -1,0 +1,82 @@
+.main-body{
+    vertical-align: middle;
+    text-align: center;
+}
+
+.price-card{
+    font-family: helvetica;
+    display: inline-block;
+    width: 90vw;
+    height: 80vh;
+    background-color: #ffffff;
+    border-radius: 1vw;
+    overflow: hidden;
+    margin: 0vh 1vw 3vh 1vw;
+}
+
+.price-card .header{
+    color: #FFFFFF;
+    text-shadow: 1px 1px #000000;
+    margin: 0px;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+}
+
+.price-card .header h2 {
+    font-size: 3vh;
+}
+
+.price-card #basic {
+    background: linear-gradient(to bottom right, #33ccff 0%, #3399ff 100%);
+}
+
+.price-card #mid {
+    background: linear-gradient(to bottom right, #33aaff 0%, #3344ff 100%);
+}
+
+.price-card #best {
+    background: linear-gradient(to bottom right, #3322ff 0%, #110088 100%);
+}
+
+.price-card .body{
+    height: 30vh;
+}
+
+.price-card hr{
+    margin: 0px 5% 0px 5%;
+    width: 90%;
+}
+
+.price-card p{
+    font-size: 3vh;
+}
+
+.price-card .info-line{
+    box-sizing: border-box;
+    padding-top: 2vh;
+    padding-bottom: 1vh;
+}
+
+.status-icon{
+    height: 3vh;
+}
+
+.price-card .price h1{
+    display: inline;
+    font-size: 10vh;
+}
+
+.price-card .purchase-button{
+    margin-top: .25vw;
+    border: 0px;
+    padding: .5em 2.5vw .5em 2.5vw;
+    border-radius: 1vw;
+    width: 40%;
+    background-color: #1111ee;
+    color: #ffffff;
+    transition: all 0.3s;
+}
+
+.price-card .purchase-button:hover{
+    background-color: #111111;
+}

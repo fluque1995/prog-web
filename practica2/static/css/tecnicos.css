@@ -1,0 +1,38 @@
+.main-body{
+    vertical-align: center;
+    text-align: center;
+}
+
+.main-body .ribbon{
+    font-family: helvetica;
+    font-size: 2em;
+    color: #002156;
+    background-color: #FFFFFF;
+    padding-top: 2vh;
+    padding-right: 25vw;
+    padding-left: 25vw;
+    padding-bottom: 2vh;
+    margin: 1vh 2vw 1vh 2vw;
+    border-radius: 2vw;
+}
+
+.main-body .staff-member{
+    box-sizing: border-box;
+    width: 30%;
+    height: 20%;
+    display: inline-block;
+    margin: .5vh .5vw .5vh .5vw;
+    background-color: #FFFFFF;
+    border-radius: 1vw;
+}
+
+.main-body .staff-member .photo{
+    margin-top: 1vh;
+    width: 20vw;
+    border-radius: 1vw;
+}
+
+.main-body .staff-member h1, .main-body .staff-member h2{
+    font-family: helvetica;
+    color: #002156;
+}

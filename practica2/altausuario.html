@@ -1,0 +1,107 @@
+<!doctype HTML>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Francisco Luque">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" media="(max-width: 768px)" href="static/css/mobile/topbar.css">
+    <link rel="stylesheet" type="text/css" media="(min-width: 768px)" href="static/css/topbar.css">
+    <link rel="stylesheet" type="text/css" media="(max-width: 768px)" href="static/css/mobile/footer.css">
+    <link rel="stylesheet" type="text/css" media="(min-width: 768px)" href="static/css/footer.css">
+    <link rel="stylesheet" type="text/css" media="(max-width: 768px)" href="static/css/mobile/top-menu.css">
+    <link rel="stylesheet" type="text/css" media="(min-width: 768px)" href="static/css/top-menu.css">
+    <link rel="stylesheet" type="text/css" media="(max-width: 768px)" href="static/css/mobile/altausuario.css">
+    <link rel="stylesheet" type="text/css" media="(min-width: 768px)" href="static/css/altausuario.css">
+    <title>Awesome gym</title>
+  </head>
+  <body>
+    <header class="topbar">
+      <a href="index2.html">
+        <img src="static/imgs/logo.png" id="logo" alt="Volver al inicio">
+      </a>
+      <section id="gym-name">
+        <h1>AWESOME GYM</h1>
+      </section>
+      <section class="login-info">
+        <h2>BIENVENIDO</h2>
+        <p>Usuario: fluque1995</p>
+        <a href="index.html">
+          <button type="button" action="index.html" id="logout-button">Salir</button>
+        </a>
+      </section>
+    </header>
+    <ul class="top-menu">
+      <li><a href="index2.html">Inicio</a></li>
+      <li><a href="actividades.html">Actividades</a></li>
+      <li><a href="horario.html">Horario</a></li>
+      <li><a href="tecnicos.html">Técnicos</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="localizacion.html">Localización</a></li>
+      <li><a href="precios.html">Precios</a></li>
+      <li><a href="altausuario.html">Alta usuarios</a></li>
+      <li><a href="foro.html">Foro</a></li>
+    </ul>
+    <section class="main-body">
+      <h2 class="ribbon">ALTA DE USUARIO</h2>
+      <section class="signup-form">
+        <form action="" method="post">
+          <header>
+            <h1>DATOS PERSONALES</h1>
+          </header>
+          <fieldset>
+            <input type="text" class="form-input" id="name" placeholder="Nombre" required>
+            <br>
+            <input type="text" class="form-input" id="family-name" placeholder="Apellidos" required>
+            <br>
+            <textarea class="long-form-input" cols="80" rows="5" id="address" placeholder="Dirección" required></textarea>
+            <br>
+            <input type="text" class="form-input" id="population" placeholder="Localidad" required>
+            <br>
+            <input type="text" class="form-input" id="province" placeholder="Provincia" required>
+            <br>
+            <section class="form-input-button">
+              <p>Foto de perfil</p>
+              <input type="file" required>
+            </section>
+          </fieldset>
+          <header>
+            <h1>DATOS DE USUARIO</h1>
+          </header>
+          <fieldset>
+            <input type="text" class="form-input" id="username" placeholder="Nombre de usuario" required>
+            <br>
+            <input type="email" class="form-input" id="email" placeholder="Correo electrónico" required>
+            <br>
+            <input type="password" class="form-input" id="password1" placeholder="Contraseña" required>
+            <br>
+            <input type="password" class="form-input" id="password2" placeholder="Repita la contraseña" required>
+            <br>
+          </fieldset>
+          <header>
+            <h1>INFORMACIÓN ADICIONAL (OPCIONAL)</h1>
+          </header>
+          <fieldset>
+            <select class="form-input dropdown-input" id="cause" placeholder="foo">
+              <option value="" disabled selected>¿Cómo nos conoció?</option>
+              <option value="internet">A través de un anuncio en internet</option>
+              <option value="radio">A través de un anuncio en la radio</option>
+              <option value="recommendation">Recomendación de un conocido</option>
+              <option value="propaganda">Me dieron información en la calle</option>
+            </select>
+          </fieldset>
+          <input type="submit" class="button" id="login-button" value="Enviar">
+          <input type="reset" class="button" id="reset-button" value="Limpiar formulario">
+        </form>
+      </section>
+    </section>
+    <footer class="bottom-footer">
+      <section id="contact">
+        <img class="glyphicon-phone" src="static/icons/phone.svg">
+        <p id="phone">(+34) 958 123 456</p>
+        <img class="glyphicon-mail" src="static/icons/envelope.svg">
+        <a href="mailto:contacto@awesomegym.es"><p id="mail">contacto@awesomegym.es</p></a>
+        <a id="howto" href="como_se_hizo.pdf">Como se hizo</a>
+      </section>
+    </footer>
+  </body>
+</html>

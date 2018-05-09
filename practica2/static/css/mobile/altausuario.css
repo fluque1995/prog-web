@@ -1,0 +1,134 @@
+.main-body{
+    vertical-align: center;
+    text-align: center;
+}
+
+.main-body .ribbon{
+    display: inline-block;
+    box-sizing: border-box;
+    width: 90%;
+    font-size: 5vh;
+    margin: 1vh 0vw 1vh 0vw;
+    color: #002156;
+    background-color: #FFFFFF;
+    border-radius: 2vw;
+    font-family: helvetica;
+}
+
+.main-body .signup-form{
+    font-family: helvetica;
+    box-sizing: border-box;
+    width: 90vw;
+    display: inline-block;
+    overflow: hidden;
+    background-color: #FFFFFF;
+    border-radius: 3vw;
+}
+
+.main-body .signup-form header{
+    text-align: left;
+    background: linear-gradient(to bottom right, #3322ff 0%, #110088 100%);
+    margin: 0px;
+    padding-top: .1vh;
+    padding-bottom: .1vh;
+}
+
+.main-body .signup-form header h1{
+    margin-left: 1vw;
+    color: #FFFFFF;
+}
+
+.main-body .signup-form fieldset{
+    border: none;
+}
+
+.main-body .signup-form .form-input{
+    box-sizing: border-box;
+    padding: 2vh 2vw 2vh 2vw;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    width: 90%;
+    background-color: #FAFAFA;
+    border-radius: 2vw;
+    text-align: left;
+    border: 1px solid #DDDDDD;
+    font-family: helvetica;
+}
+
+.main-body .signup-form .form-input:focus{
+    outline: none;
+    border: 1px solid #101060;
+}
+
+.main-body .signup-form .dropdown-input{
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.main-body .signup-form .long-form-input{
+    box-sizing: border-box;
+    padding: 2vh 2vw 2vh 2vw;
+    font-family: helvetica;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    width: 90%;
+    height: 20vh;
+    resize: none;
+    background-color: #FAFAFA;
+    border-radius: 2vw;
+    text-align: left;
+    border: 1px solid #DDDDDD;
+}
+
+.main-body .signup-form .long-form-input:focus{
+    outline: none;
+    border: 1px solid #101060;
+}
+
+.main-body .signup-form .button{
+    box-sizing: border-box;
+    width: 40vw;
+    margin: 1vh 1vw 2vh 1vw;
+    height: 4vh;
+    border-radius: 2vw;
+    border: none;
+    color: white;
+}
+
+.main-body .signup-form .button:focus{
+    outline: none;
+}
+
+.main-body .signup-form .form-input-button{
+    box-sizing: border-box;
+    padding: 2vh 2vw 2vh 2vw;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    width: 90%;
+    background-color: #FAFAFA;
+    border-radius: 2vw;
+    text-align: left;
+    border: 1px solid #DDDDDD;
+    font-family: helvetica;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-input-button p{
+    color: #909090;
+    font: 400 13.3333px Arial;
+    display: inline;
+}
+
+.main-body .signup-form .button#login-button{
+    background-color: #57b846;
+}
+
+.main-body .signup-form .button#reset-button{
+    background-color: #d9534f;
+}
+
+.main-body .signup-form .button:hover{
+    background-color: #111111;
+}
