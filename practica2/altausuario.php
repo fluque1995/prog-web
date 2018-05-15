@@ -15,32 +15,8 @@
     <title>Awesome gym</title>
   </head>
   <body>
-    <header class="topbar">
-      <a href="index2.html">
-        <img src="static/imgs/logo.png" id="logo" alt="Volver al inicio">
-      </a>
-      <section id="gym-name">
-        <h1>AWESOME GYM</h1>
-      </section>
-      <section class="login-info">
-        <h2>BIENVENIDO</h2>
-        <p>Usuario: fluque1995</p>
-        <a href="index.html">
-          <button type="button" action="index.html" id="logout-button">Salir</button>
-        </a>
-      </section>
-    </header>
-    <ul class="top-menu">
-      <li><a href="index2.html">Inicio</a></li>
-      <li><a href="actividades.html">Actividades</a></li>
-      <li><a href="horario.html">Horario</a></li>
-      <li><a href="tecnicos.html">Técnicos</a></li>
-      <li><a href="servicios.html">Servicios</a></li>
-      <li><a href="localizacion.html">Localización</a></li>
-      <li><a href="precios.html">Precios</a></li>
-      <li><a href="altausuario.html">Alta usuarios</a></li>
-      <li><a href="foro.html">Foro</a></li>
-    </ul>
+<?php include("php-includes/header.php.inc"); ?>
+<?php include("php-includes/top-menu.php.inc"); ?>
     <section class="main-body">
       <h2 class="ribbon">ALTA DE USUARIO</h2>
       <section class="signup-form">
@@ -94,14 +70,9 @@
         </form>
       </section>
     </section>
-    <footer class="bottom-footer">
-      <section id="contact">
-        <img class="glyphicon-phone" src="static/icons/phone.svg">
-        <p id="phone">(+34) 958 123 456</p>
-        <img class="glyphicon-mail" src="static/icons/envelope.svg">
-        <a href="mailto:contacto@awesomegym.es"><p id="mail">contacto@awesomegym.es</p></a>
-        <a id="howto" href="como_se_hizo.pdf">Como se hizo</a>
-      </section>
-    </footer>
+<?php
+include("php-includes/footer.php.inc");
+print_footer("bottom-footer");
+?>
   </body>
 </html>

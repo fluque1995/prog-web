@@ -1,5 +1,5 @@
-<!doctype HTML>
-<html>
+<!DOCTYPE HTML>
+<HTML>
   <head>
     <meta charset="UTF-8">
     <meta name="author" content="Francisco Luque">
@@ -13,22 +13,8 @@
     <title>Awesome gym</title>
   </head>
   <body>
-    <header class="topbar">
-      <a href="index2.html">
-        <img src="static/imgs/logo.png" id="logo" alt="Volver al inicio">
-      </a>
-      <section id="gym-name">
-        <h1>AWESOME GYM</h1>
-      </section>
-      <section class="login-info">
-        <h2>BIENVENIDO</h2>
-        <p>Usuario: fluque1995</p>
-        <a href="index.html">
-          <button type="button" action="index.html" id="logout-button">Salir</button>
-        </a>
-      </section>
-    </header>
-    <section class="main-body">
+<?php include("php-includes/header.php.inc"); ?>
+<section class="main-body">
       <section id="main-image">
         <img src="static/imgs/main-img.jpg" id="photo">
         <p>Recoger las pesas también te pone fuerte<br>
@@ -45,9 +31,9 @@
         <br>
         <a class="main-link" href="localizacion.html">LOCALIZACIÓN</a>
         <br>
-        <a class="main-link" href="precios.html">PRECIOS Y PROMOCIONES</a>
+        <a class="main-link" href="precios.php">PRECIOS Y PROMOCIONES</a>
         <br>
-        <a class="main-link" href="altausuario.html">ALTA DE USUARIOS</a>
+        <a class="main-link" href="altausuario.php">ALTA DE USUARIOS</a>
         <br>
         <a class="main-link" href="foro.html">FORO</a>
         <br>
@@ -55,14 +41,9 @@
     </section>
     <section class="footer-back">
     </section>
-    <footer>
-      <section id="contact">
-        <img class="glyphicon-phone" src="static/icons/phone.svg">
-        <p id="phone">(+34) 958 123 456</p>
-        <img class="glyphicon-mail" src="static/icons/envelope.svg">
-        <a href="mailto:contacto@awesomegym.es"><p id="mail">contacto@awesomegym.es</p></a>
-        <a id="howto" href="como_se_hizo.pdf">Como se hizo</a>
-      </section>
-    </footer>
+<?php
+    include("php-includes/footer.php.inc");
+    print_footer("");
+?>
   </body>
 </html>
