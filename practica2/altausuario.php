@@ -15,8 +15,8 @@
     <title>Awesome gym</title>
   </head>
   <body>
-<?php include("php-includes/header.php.inc"); ?>
-<?php include("php-includes/top-menu.php.inc"); ?>
+<?php include("php-includes/header.inc.php"); ?>
+<?php include("php-includes/top-menu.inc.php"); ?>
     <section class="main-body">
       <h2 class="ribbon">ALTA DE USUARIO</h2>
       <section class="signup-form">
@@ -71,7 +71,7 @@
       </section>
     </section>
 <?php
-include("php-includes/footer.php.inc");
+include("php-includes/footer.inc.php");
 print_footer("bottom-footer");
 ?>
   </body>

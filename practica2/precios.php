@@ -15,8 +15,8 @@
     <title>Awesome gym</title>
   </head>
   <body>
-<?php include("php-includes/header.php.inc"); ?>
-<?php include("php-includes/top-menu.php.inc"); ?>
+<?php include("php-includes/header.inc.php"); ?>
+<?php include("php-includes/top-menu.inc.php"); ?>
     <section class="main-body">
       <section class="price-card">
         <section class="header" id="basic">
@@ -104,7 +104,7 @@
       </section>
     </section>
 <?php
-include("php-includes/footer.php.inc");
+include("php-includes/footer.inc.php");
 print_footer("bottom-footer");
 ?>
   </body>
