@@ -26,9 +26,9 @@ $user_sentence->execute();
 if ($user_sentence->rowCount() > 0){
     session_start();
     $_SESSION["usr"] = $username;
-    header('Location: ../index.php');
+    echo("Logged");
 } else {
-    # TODO: NOT LOGGED
+    echo("NotLogged");
 }
 
 ?>

@@ -11,13 +11,13 @@ echo '<header class="topbar">
 if (!isset($_SESSION["usr"])){
 echo '<section class="login-form">
         <h2>ENTRAR AL SITIO</h2>
-        <form action="php-includes/log_user.php" method="post">
+        <form id="login-form" method="post">
           <fieldset>
             <input type="text" class="form-input" id="username" name="username" placeholder="Usuario">
             <br>
             <input type="password" class="form-input" id="password" name="password" placeholder="Contraseña">
             <br>
-            <input type="submit" id="login-button" value="Enviar">
+            <button id="login-button">Enviar</button>
           </fieldset>
         </form>
       </section>';
