@@ -61,8 +61,8 @@
                    id="signup-username" name="signup-username"
                    placeholder="Nombre de usuario" >
             <br>
-            <input type="email" class="form-input"
-                   id="email" nme="email"
+            <input type="text" class="form-input"
+                   id="email" name="email"
                    placeholder="Correo electrónico" >
             <br>
             <input type="password" class="form-input"
@@ -72,6 +72,14 @@
             <input type="password" class="form-input"
                    id="password2" name="password2"
                    placeholder="Repita la contraseña" >
+            <br>
+            <input type="text" class="form-input"
+                   id="mobile-phone" name="mobile-phone"
+                   placeholder="Teléfono móvil" >
+            <br>
+            <input type="text" class="form-input"
+                   id="telephone" name="telephone"
+                   placeholder="Teléfono fijo" >
             <br>
           </fieldset>
           <header>
