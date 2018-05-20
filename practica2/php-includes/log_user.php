@@ -1,34 +1,10 @@
 <?php
-$dsn = "mysql:host=localhost;dbname=centro_deportivo";
-$db_username = "root";
-$db_password = "etoipip1";
-
-try{
-    $connection = new PDO($dsn, $db_username, $db_password);
-}catch(PDOException $except) {
-    echo "Ha petado el mecanismo";
-    echo $except->getMessage();
-    echo phpinfo();
+require_once("user.inc.php");
+$user = new User($_POST);
+foreach ($_POST as $key => $val){
+    echo $key.": ".$val;
 }
-
-
-$user_query = "SELECT * FROM users WHERE user_name=:user_name AND user_pass=:user_pass";
-$user_sentence = $connection->prepare($user_query);
-
-$username = $_POST['username'];
-$pass = $_POST['password'];
-
-$user_sentence->bindValue(":user_name", $username);
-$user_sentence->bindValue(":user_pass", $pass);
-
-$user_sentence->execute();
-
-if ($user_sentence->rowCount() > 0){
-    session_start();
-    $_SESSION["usr"] = $username;
-    echo("Logged");
-} else {
-    echo("NotLogged");
-}
-
+echo $user->getValue("username");
+echo $user->getValue("password");
+echo $user->logUser();
 ?>

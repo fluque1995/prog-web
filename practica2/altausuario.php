@@ -37,8 +37,7 @@
             <br>
             <textarea class="long-form-input" cols="80" rows="5"
                       id="address" name="address" placeholder="Dirección"
-                      >
-            </textarea>
+                      ></textarea>
             <br>
             <input type="text" class="form-input"
                    id="population" name="population"
@@ -48,9 +47,9 @@
                    id="province" name="province"
                    placeholder="Provincia" >
             <br>
-            <section class="form-input-button">
+            <section class="form-input-button" id="photo-container">
               <p>Foto de perfil</p>
-              <input type="file" >
+              <input type="file" id="photo" name="photo">
             </section>
           </fieldset>
           <header>
@@ -86,12 +85,13 @@
             <h1>INFORMACIÓN ADICIONAL (OPCIONAL)</h1>
           </header>
           <fieldset>
-            <select class="form-input dropdown-input" id="cause">
+            <select class="form-input dropdown-input" id="reference" name="reference">
               <option value="" disabled selected>¿Cómo nos conoció?</option>
               <option value="internet">A través de un anuncio en internet</option>
               <option value="radio">A través de un anuncio en la radio</option>
               <option value="recommendation">Recomendación de un conocido</option>
               <option value="propaganda">Me dieron información en la calle</option>
+              <option value="unknown">Prefiero no contestar</option>
             </select>
           </fieldset>
           <input type="submit" class="button" id="submit-button" value="Enviar">

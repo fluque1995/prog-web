@@ -17,7 +17,7 @@ echo '<section class="login-form">
             <br>
             <input type="password" class="form-input" id="password" name="password" placeholder="Contraseña">
             <br>
-            <button id="login-button">Enviar</button>
+            <input type="submit" id="login-button" value="Enviar"></input>
           </fieldset>
         </form>
       </section>';
