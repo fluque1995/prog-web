@@ -8,10 +8,10 @@ class User extends DbModel {
         "username" => "",
         "password" => "",
         "email" => "",
-        "mobile-phone" => "",
+        "mobile_phone" => "",
         "telephone" => "",
-        "first-name" => "",
-        "family-name" => "",
+        "first_name" => "",
+        "family_name" => "",
         "address" => "",
         "population" => "",
         "province" => "",
@@ -34,10 +34,10 @@ class User extends DbModel {
             $sentence->bindValue(':username', $this->data["username"]);
             $sentence->bindValue(':password', $this->data["password"]);
             $sentence->bindValue(':email', $this->data["email"]);
-            $sentence->bindValue(':mobile_phone', $this->data["mobile-phone"]);
+            $sentence->bindValue(':mobile_phone', $this->data["mobile_phone"]);
             $sentence->bindValue(':telephone', $this->data["telephone"]);
-            $sentence->bindValue(':first_name', $this->data["first-name"]);
-            $sentence->bindValue(':family_name', $this->data["family-name"]);
+            $sentence->bindValue(':first_name', $this->data["first_name"]);
+            $sentence->bindValue(':family_name', $this->data["family_name"]);
             $sentence->bindValue(':address', $this->data["address"]);
             $sentence->bindValue(':population', $this->data["population"]);
             $sentence->bindValue(':province', $this->data["province"]);
@@ -69,5 +69,16 @@ class User extends DbModel {
             parent::disconnect($connection);
             return("NotLogged");
         }
+    }
+
+    public static function getUser($username){
+        $connection = parent::connect();
+        $user_query = "SELECT * FROM users WHERE username=:username";
+        $sentence = $connection->prepare($user_query);
+
+        $sentence->bindValue(":username", $username);
+        $sentence->execute();
+
+        return new User($sentence->fetch());
     }
 }

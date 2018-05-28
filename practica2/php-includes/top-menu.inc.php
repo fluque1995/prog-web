@@ -8,6 +8,11 @@ echo '<ul class="top-menu">
       <li><a href="localizacion.php">Localización</a></li>
       <li><a href="precios.php">Precios</a></li>
       <li><a href="altausuario.php">Alta usuarios</a></li>
-      <li><a href="foro.php">Foro</a></li>
-    </ul>';
+      <li><a href="foro.php">Foro</a></li>';
+session_start();
+if(isset($_SESSION['usr'])){
+    echo '<li><a href="perfil.php">Perfil</a></li>';
+
+}
+echo '</ul>';
 ?>

@@ -18,9 +18,13 @@
 <?php include("php-includes/header.inc.php"); ?>
 <?php include("php-includes/top-menu.inc.php"); ?>
     <section class="main-body">
-      <h2 class="ribbon">ALTA DE USUARIO</h2>
-      <section class="signup-form">
-        <form id="signup-form" action="php-includes/sign_up.php" method="post" enctype="multipart/form-data">
+      <h2 class="ribbon">MI PERFIL</h2>
+     <section class="signup-form">
+<?php require_once("php-includes/user.inc.php");
+     session_start();
+$user = User::getUser($_SESSION["usr"]);
+?>
+        <form id="update-form" action="php-includes/update_user.php" method="post" enctype="multipart/form-data">
           <header>
             <h1>DATOS PERSONALES</h1>
           </header>
@@ -28,23 +32,25 @@
             <input
               type="text" class="form-input"
               id="first-name" name="first-name"
-              placeholder="Nombre">
+              value="<?php echo $user->getValue("first_name");?>" placeholder="Nombre">
             <br>
             <input
               type="text" class="form-input"
               id="family-name" name="family-name"
-              placeholder="Apellidos" >
+      value="<?php echo $user->getValue("family_name");?>"placeholder="Apellidos" >
             <br>
             <textarea class="long-form-input" cols="80" rows="5"
                       id="address" name="address" placeholder="Dirección"
-                      ></textarea>
+                      ><?php echo $user->getValue("address");?></textarea>
             <br>
             <input type="text" class="form-input"
                    id="population" name="population"
+                   value="<?php echo $user->getValue("population");?>"
                    placeholder="Localidad" >
             <br>
             <input type="text" class="form-input"
                    id="province" name="province"
+                   value="<?php echo $user->getValue("province");?>"
                    placeholder="Provincia" >
             <br>
             <section class="form-input-button" id="photo-container">
@@ -80,19 +86,6 @@
                    id="telephone" name="telephone"
                    placeholder="Teléfono fijo" >
             <br>
-          </fieldset>
-          <header>
-            <h1>INFORMACIÓN ADICIONAL (OPCIONAL)</h1>
-          </header>
-          <fieldset>
-            <select class="form-input dropdown-input" id="reference" name="reference">
-              <option value="" disabled selected>¿Cómo nos conoció?</option>
-              <option value="internet">A través de un anuncio en internet</option>
-              <option value="radio">A través de un anuncio en la radio</option>
-              <option value="recommendation">Recomendación de un conocido</option>
-              <option value="propaganda">Me dieron información en la calle</option>
-              <option value="unknown">Prefiero no contestar</option>
-            </select>
           </fieldset>
           <input type="submit" class="button" id="submit-button" value="Enviar">
           <input type="reset" class="button" id="reset-button" value="Limpiar formulario">

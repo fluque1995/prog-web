@@ -1,5 +1,6 @@
 $(document).ready( function(event) {
     $('#signup-form').submit( function(event) {
+        event.preventDefault();
         var data_correct = true;
         var personal_data = $('[name="first-name"],\
                                [name="family-name"],\
@@ -105,6 +106,10 @@ $(document).ready( function(event) {
 
         if (data_correct){
             var form_json = [];
+            var form_data = new FormData();
+
+            form_data.append('image', $("[name=photo]")[0].files[0]);
+
             $.merge(form_json, personal_data.serializeArray());
             $.merge(form_json, username.serializeArray());
             $.merge(form_json, email.serializeArray());
@@ -112,13 +117,20 @@ $(document).ready( function(event) {
             $.merge(form_json, mobile_number.serializeArray());
             $.merge(form_json, phone_number.serializeArray());
             $.merge(form_json, reference.serializeArray());
-            event.preventDefault();
+
+            for (var i = 0; i < form_json.length; i++) {
+                form_data.append(form_json[i].name, form_json[i].value);
+            }
+
             $.ajax({
-                type: 'post',
+                type: 'POST',
+                processData: false,
+                contentType: false,
                 url: "php-includes/sign_up.php",
-                data: form_json,
+                data: form_data,
                 async: true
             });
+
         } else {
             event.preventDefault();
         }

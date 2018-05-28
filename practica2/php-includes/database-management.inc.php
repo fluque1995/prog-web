@@ -5,7 +5,7 @@ require_once("db-config.inc.php");
 abstract class DbModel {
     protected $data = array();
 
-    public function __construct($data){
+    public function __construct($data = NULL){
         foreach ($data as $key => $val){
             if (array_key_exists($key, $this->data)){
                 $this->data[$key] = $val;

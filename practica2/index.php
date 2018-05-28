@@ -26,6 +26,13 @@
         <br>
         <a class="main-link" href="foro.php">FORO</a>
         <br>
+        <?php
+        session_start();
+        if (isset($_SESSION['usr'])){
+        echo '<a class="main-link" href="perfil.php">PERFIL</a>
+        <br>';
+        }
+        ?>
       </section>
     </section>
     <section class="footer-back">
