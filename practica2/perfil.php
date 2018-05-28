@@ -32,12 +32,14 @@ $user = User::getUser($_SESSION["usr"]);
             <input
               type="text" class="form-input"
               id="first-name" name="first-name"
-              value="<?php echo $user->getValue("first_name");?>" placeholder="Nombre">
+              value="<?php echo $user->getValue("first_name");?>"
+              placeholder="Nombre">
             <br>
             <input
               type="text" class="form-input"
               id="family-name" name="family-name"
-      value="<?php echo $user->getValue("family_name");?>"placeholder="Apellidos" >
+              value="<?php echo $user->getValue("family_name");?>"
+              placeholder="Apellidos" >
             <br>
             <textarea class="long-form-input" cols="80" rows="5"
                       id="address" name="address" placeholder="Dirección"
@@ -54,7 +56,7 @@ $user = User::getUser($_SESSION["usr"]);
                    placeholder="Provincia" >
             <br>
             <section class="form-input-button" id="photo-container">
-              <p>Foto de perfil</p>
+              <img src="static/imgs/users/<?php echo $user->getValue("image")?>"/>
               <input type="file" id="photo" name="photo">
             </section>
           </fieldset>
@@ -64,26 +66,22 @@ $user = User::getUser($_SESSION["usr"]);
           <fieldset>
             <input type="text" class="form-input"
                    id="signup-username" name="signup-username"
+                   value="<?php echo $user->getValue("username");?>"
                    placeholder="Nombre de usuario" >
             <br>
             <input type="text" class="form-input"
                    id="email" name="email"
+                   value="<?php echo $user->getValue("email");?>"
                    placeholder="Correo electrónico" >
-            <br>
-            <input type="password" class="form-input"
-                   id="password1" name="password1"
-                   placeholder="Contraseña" >
-            <br>
-            <input type="password" class="form-input"
-                   id="password2" name="password2"
-                   placeholder="Repita la contraseña" >
             <br>
             <input type="text" class="form-input"
                    id="mobile-phone" name="mobile-phone"
+                   value="<?php echo $user->getValue("mobile_phone");?>"
                    placeholder="Teléfono móvil" >
             <br>
             <input type="text" class="form-input"
                    id="telephone" name="telephone"
+                   value="<?php echo $user->getValue("telephone");?>"
                    placeholder="Teléfono fijo" >
             <br>
           </fieldset>
@@ -92,7 +90,7 @@ $user = User::getUser($_SESSION["usr"]);
         </form>
       </section>
      <script src="static/js/jquery-3.3.1.min.js"></script>
-     <script src="static/js/signUp.js"></script>
+     <script src="static/js/updateUser.js"></script>
     </section>
 <?php
 include("php-includes/footer.inc.php");

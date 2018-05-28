@@ -124,6 +124,13 @@
 .form-input-button input{
     display: inline;
     float: right;
+    margin: auto;
+}
+
+.form-input-button img{
+    display: inline;
+    height: 100px;
+    vertical-align: middle;
 }
 
 .main-body .signup-form .button#submit-button{

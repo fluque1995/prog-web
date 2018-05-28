@@ -81,4 +81,31 @@ class User extends DbModel {
 
         return new User($sentence->fetch());
     }
+
+    public function updateUser($old_username){
+        $connection = parent::connect();
+        $sql_query = "UPDATE ". TABLE_USERS
+                   ." SET username=:username, email=:email, mobile_phone=:mobile_phone,"
+                   ." telephone=:telephone, first_name=:first_name, family_name=:family_name,"
+                   ." address=:address, population=:population, province=:province"
+                   ." WHERE username=:old_username";
+        try {
+            $sentence = $connection->prepare($sql_query);
+            $sentence->bindValue(':username', $this->data["username"]);
+            $sentence->bindValue(':email', $this->data["email"]);
+            $sentence->bindValue(':mobile_phone', $this->data["mobile_phone"]);
+            $sentence->bindValue(':telephone', $this->data["telephone"]);
+            $sentence->bindValue(':first_name', $this->data["first_name"]);
+            $sentence->bindValue(':family_name', $this->data["family_name"]);
+            $sentence->bindValue(':address', $this->data["address"]);
+            $sentence->bindValue(':population', $this->data["population"]);
+            $sentence->bindValue(':province', $this->data["province"]);
+            $sentence->bindValue(':old_username', $old_username);
+            $sentence->execute();
+        } catch (PDOException $exception) {
+            return "There was a problem updating user".$exception->getMessage();
+        }
+        parent::disconnect($connection);
+    }
+
 }
