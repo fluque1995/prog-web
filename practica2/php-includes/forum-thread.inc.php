@@ -54,4 +54,26 @@ class ForumThread extends DbModel {
         }
         parent::disconnect($connection);
     }
+
+    public static function getThread($thread_id){
+        $connection = parent::connect();
+        $sql_query = "SELECT user.first_name, user.family_name, user.image, "
+                   ."thread.title, thread.description, thread.thread_id FROM "
+                   .TABLE_USERS." user, ".TABLE_THREADS." thread"
+                   ." WHERE user.user_id = thread.user_id"
+                   ." AND thread.thread_id = :thread_id";
+        try {
+            $sentence = $connection->prepare($sql_query);
+            $sentence->bindValue(':thread_id', $thread_id);
+            $sentence->execute();
+            $row = $sentence->fetch();
+            $row["full_user_name"] = $row["first_name"]." ".$row["family_name"];
+            $row["user_image"] = $row["image"];
+            parent::disconnect($connection);
+            return new ForumThread($row);
+        } catch (PDOException $exception) {
+            parent::disconnect($connection);
+            return "There was a problem fetching threads: ".$exception->getMessage();
+        }
+    }
 }

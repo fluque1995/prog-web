@@ -20,31 +20,36 @@
 <?php include("php-includes/top-menu.inc.php"); ?>
     <section class="main-body">
       <section class="ribbon-forum">
-        <h2 class="ribbon">FORO</h2>
-     <a href="crearhilo.php">
-          <button type="button" class="button" action="crearhilo.php">Crear hilo</button>
-        </a>
+        <h2 class="ribbon">HILO</h2>
       </section>
       <section class="forum-threads-container">
 <?php require("php-includes/forum-thread.inc.php");
-     $threads = ForumThread::getThreads();
-foreach($threads as $thread){
+     $thread = ForumThread::getThread($_GET["thread_id"]);
     echo '<article class="forum-thread">';
     echo '<img src="static/imgs/users/'.$thread->getValue("user_image").'">';
     echo '<section class="user-info">';
     echo "<h1>".$thread->getValue("full_user_name")."</h1>";
     echo '</section>';
     echo '<section class="thread-info">';
-    echo '<a href="hilo.php?thread_id='.$thread->getValue("thread_id").'">';
     echo '<h1>'.$thread->getValue("title")."</h1>";
-    echo '</a>';
     echo "<p>".$thread->getValue("description")."</p>";
     echo '</section>';
-    echo '<a href="responderhilo.php?thread_id='.$thread->getValue("thread_id").'">';
-    echo '<button type="button" class="button">Responder</button>';
-    echo '</a>';
     echo '</article>';
-    if ($thread !== end($threads)){
+?>
+       <hr>
+<?php require("php-includes/forum-response.inc.php");
+$responses = ForumResponse::getResponses($_GET["thread_id"]);
+foreach($responses as $response){
+    echo '<article class="forum-thread">';
+    echo '<img src="static/imgs/users/'.$response->getValue("user_image").'">';
+    echo '<section class="user-info">';
+    echo "<h1>".$response->getValue("full_user_name")."</h1>";
+    echo '</section>';
+    echo '<section class="thread-info">';
+    echo "<p>".$response->getValue("response")."</p>";
+    echo '</section>';
+    echo '</article>';
+    if ($response !== end($responses)){
         echo '<hr>';
     }
 }
