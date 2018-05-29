@@ -36,7 +36,7 @@
             <h1>Consulta sobre dieta</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus eu sapien eget ligula sagittis porta ac nec nisl. Aenean ipsum risus, hendrerit a iaculis ac, malesuada quis libero. Ut vulputate imperdiet facilisis. Mauris ultricies tellus eu nibh condimentum dictum. Ut eu fermentum tortor. In imperdiet est eget justo luctus tincidunt. Duis congue elementum convallis. Nulla sed risus eu ligula porta faucibus. Proin auctor purus eget dui feugiat, in molestie sem dapibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam eget ipsum sem. Integer interdum diam id urna cursus tristique. Nulla facilisi. Maecenas mollis, dui nec tincidunt ornare, lacus erat euismod leo, non tincidunt ligula urna id libero.</p>
           </section>
-          <a href="responderhilo.html">
+          <a href="responderhilo.php?thread_id=1">
             <button type="button" class="button" action="foro.html">Responder</button>
           </a>
         </article>
