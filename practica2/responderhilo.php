@@ -31,6 +31,8 @@
           <input type="submit" class="button" id="response-button" value="Enviar">
         </form>
       </section>
+     <script src="static/js/jquery-3.3.1.min.js"></script>
+     <script src="static/js/createResponse.js"></script>
     </section>
 <?php
 include("php-includes/footer.inc.php");

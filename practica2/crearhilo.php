@@ -38,7 +38,6 @@
       </section>
      <script src="static/js/jquery-3.3.1.min.js"></script>
      <script src="static/js/createThread.js"></script>
-
     </section>
 <?php
 include("php-includes/footer.inc.php");
