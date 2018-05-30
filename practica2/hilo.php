@@ -18,7 +18,9 @@
 <?php require("php-includes/forum-thread.inc.php");
      $thread = ForumThread::getThread($_GET["thread_id"]);
     echo '<article class="forum-thread">';
+    echo '<section class="user-img">';
     echo '<img src="static/imgs/users/'.$thread->getValue("user_image").'">';
+    echo '</section>';
     echo '<section class="user-info">';
     echo "<h1>".$thread->getValue("full_user_name")."</h1>";
     echo '</section>';
@@ -33,7 +35,9 @@
 $responses = ForumResponse::getResponses($_GET["thread_id"]);
 foreach($responses as $response){
     echo '<article class="forum-thread">';
+    echo '<section class="user-img">';
     echo '<img src="static/imgs/users/'.$response->getValue("user_image").'">';
+    echo '</section>';
     echo '<section class="user-info">';
     echo "<h1>".$response->getValue("full_user_name")."</h1>";
     echo '</section>';

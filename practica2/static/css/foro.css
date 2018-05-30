@@ -1,6 +1,6 @@
 .main-body{
     text-align: center;
-    font-family: helvetica;   
+    font-family: helvetica;
 }
 
 .main-body .ribbon-forum{
@@ -51,14 +51,18 @@
     width: 90%;
 }
 
-.main-body .forum-thread img{
+.main-body .forum-thread .user-img{
     display: inline-block;
     vertical-align: middle;
-    height: 10vh;
+    height: 12vh;
     margin-left: 4vw;
     padding-top: 3vh;
     padding-bottom: 3vh;
-    background-color: #FFFFFF;    
+    background-color: #FFFFFF;
+}
+
+.main-body .forum-thread img{
+    height: 100%;
 }
 
 .user-info{
@@ -88,4 +92,3 @@
 .main-body .thread-info h1{
     font-size: 2vh;
 }
-

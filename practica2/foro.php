@@ -24,7 +24,17 @@
      $threads = ForumThread::getThreads();
 foreach($threads as $thread){
     echo '<article class="forum-thread">';
+    echo '<section class="user-img">';
     echo '<img src="static/imgs/users/'.$thread->getValue("user_image").'">';
+    $thrs_own = ForumThread::getThreadsFromUser($thread->getValue("user_id"));
+    echo '<section class="threads-container" style="background-color: #FFFFFF; z-index: 10; position: absolute; display: none;">';
+    foreach ($thrs_own as $thr_own){
+        echo '<a href="hilo.php?thread_id='.$thr_own->getValue("thread_id").'">';
+        echo "<p>".$thr_own->getValue("title")."</p>";
+        echo '</a>';
+    }
+    echo '</section>';
+    echo '</section>';
     echo '<section class="user-info">';
     echo "<h1>".$thread->getValue("full_user_name")."</h1>";
     echo '</section>';
@@ -46,6 +56,7 @@ echo '</a>';
 }
 ?>
       </section>
+     <script src="static/js/showThreads.js"></script>
     </section>
 <?php
 include("php-includes/footer.inc.php");

@@ -34,7 +34,7 @@ class ForumThread extends DbModel {
 
     public static function getThreads(){
         $connection = parent::connect();
-        $sql_query = "SELECT user.first_name, user.family_name, user.image, "
+        $sql_query = "SELECT user.first_name, user.family_name, user.image, user.user_id, "
                    ."thread.title, thread.description, thread.thread_id FROM "
                    .TABLE_USERS." user, ".TABLE_THREADS." thread"
                    ." WHERE user.user_id = thread.user_id";
@@ -71,6 +71,26 @@ class ForumThread extends DbModel {
             $row["user_image"] = $row["image"];
             parent::disconnect($connection);
             return new ForumThread($row);
+        } catch (PDOException $exception) {
+            parent::disconnect($connection);
+            return "There was a problem fetching threads: ".$exception->getMessage();
+        }
+    }
+    public static function getThreadsFromUser($user_id){
+        $connection = parent::connect();
+        $sql_query = "SELECT title, thread_id FROM "
+                   .TABLE_THREADS
+                   ." WHERE user_id = :user_id";
+        try {
+            $sentence = $connection->prepare($sql_query);
+            $sentence->bindValue(':user_id', $user_id);
+            $sentence->execute();
+            $threads;
+            while($row = $sentence->fetch()){
+                $threads[] = new ForumThread($row);
+            }
+            parent::disconnect($connection);
+            return $threads;
         } catch (PDOException $exception) {
             parent::disconnect($connection);
             return "There was a problem fetching threads: ".$exception->getMessage();
