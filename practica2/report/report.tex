@@ -29,7 +29,7 @@
     pdfmenubar=true,        % show Acrobat’s menu?
     pdffitwindow=false,     % window fit to page when opened
     pdfstartview={FitH},    % fits the width of the page to the window
-    pdftitle={Programación web - Práctica 1},    % title
+    pdftitle={Programación web - Práctica 2},    % title
     pdfauthor={Francisco Luque},     % author
     pdfsubject={Programación web},   % subject of the document
     pdfnewwindow=true,      % links in new PDF window
@@ -66,7 +66,7 @@
 
 \begin{document}
 
-\title{Programación Web - Práctica 1\\
+\title{Programación Web - Práctica 2\\
   DGIIM \\
   \large Web con contenido dinámico usando Javascript y PHP}
 \author{Francisco Luque Sánchez}
@@ -80,81 +80,147 @@
 
 \section{Introducción}
 
-En esta práctica se ha desarrollado una página web para un gimnasio
-utilizando HTML y CSS. Se ha tratado de crear una web responsive, de
-forma que se vea correctamente en pantallas con distinta proporción
-(concretamente, en pantallas de proporción 4:3 y 16:9, a una
-resolución de $1024 \times 768$ y $1920 \times 1080$ respectivamente)
-y dispositivos móviles.\\
+En esta práctica se ha dotado de contenido dinámico a la página web
+que se desarrolló en la práctica anterior, utilizando para ello PHP
+como lenguaje de \textit{scripting} en la lado del servidor, y
+JavaScript (concretamente la librería JQuery) como lenguaje
+de \textit{scripting} en el lado del cliente.\\
 
-Pasamos a comentar con mayor profundidad el desarrollo de dicha web.
+Pasamos a comentar el desarrollo completo en más profundidad.
 
-\section{Estructura HTML de la página}
+\section{Código en PHP de lado del servidor}
 
-La página se ha estructurado en las siguientes secciones:
+El código desarrollado para dotar a la página web de contenido
+dinámico del lado del servidor se ha hecho utilizando PHP. Con este
+lenguaje se gestionan todas las consultas a la base de datos, así como
+la inclusión de contenido redundante en todos los documentos HTML que
+conforman la página. Todos los archivos PHP con código PHP puro que se
+han desarrollado se encuentran dentro de la carpeta
+\texttt{php-includes}. Comentaremos brevemente cómo se han
+estructurado los \textit{scripts} PHP dependiendo de la función que
+realizan.
+
+\subsection{Archivos PHP para incluir contenido redundante}
+
+Como hemos dicho en la introducción, se ha usado este lenguaje para
+incluir en los documentos HTML el código redundante que aparecía en
+todos ellos. Los \textit{scripts} que se han desarrollado destinados a
+esta funcionalidad son los siguientes:
 
 \begin{itemize}
-\item Inicio (\texttt{index.html}): Es la página a la que se accede
-  por primera vez, cuando se accede al sitio web. En esta página no se
-  puede hacer nada, y los enlaces que hay en ella redirigen de nuevo a
-  esa página principal. Este es el comportamiento que se busca en la
-  página para los usuarios que no están identificados. En dicha página
-  se permite únicamente que el usuario se identifique. El sistema de
-  identificación está simulado, ya que ahora mismo no tenemos las
-  herramientas para gestionar un sistema de identificación (un
-  lenguaje como PHP).
-\item Inicio identificado (\texttt{index2.html}): Es la página a la
-  que accede el usuario después de identificarse en el sistema. En
-  futuras prácticas, esta página dejará de tener sentido, ya que con
-  el index original será suficiente. Los enlaces se activarán en dicho
-  index cuando el usuario esté identificado. En esta práctica, el
-  \texttt{index2.html} es una página idéntica al \texttt{index.html},
-  pero en la que el usuario aparece identificado, y los enlaces al
-  resto de páginas están activos.
-\item Actividades (\texttt{actividades.html}): Página en la que se ve
-  la información sobre las actividades que se llevan a cabo en el
-  gimnasio.  Además, aparece información sobre noticias que tienen que
-  ver con el gimnasio.  Dentro de la página de actividades tenemos
-  enlaces a cada una de las actividades citadas, en la que podemos ver
-  información detallada sobre la misma, como su descripción y el
-  horario.
-\item Horario (\texttt{horario.html}): En esta página se puede
-  consultar el horario del gimnasio.
-\item Técnicos (\texttt{tecnicos.html}): Página que muestra el
-  personal que trabaja en el centro.
-\item Servicios (\texttt{servicios.html}): Página que muestra los
-  servicios ofertados por el gimasio, así como sus instalaciones.
-\item Localización (\texttt{localizacion.html}): Página en la que se
-  muestra la localización del centro, utilizando un mapa creado con
-  \textit{Google Maps}.
-\item Precios (\texttt{precios.html}): Página que permite consultar
-  los distintos planes ofertados por el gimnasio para sus clientes.
-\item Alta usuarios (\texttt{altausuario.html}): Página que tiene un
-  formulario que permite a una persona crearse un nuevo usuario en el
-  sistema. Dicho formulario no tiene ninguna funcionalidad
-  actualmente, ya que como hemos comentado anteriormente no disponemos
-  de un lenguaje de programación que nos permita gestionar los datos
-  introducidos. Esta funcionalidad se implementará en futuras
-  prácticas.
-\item Foro (\texttt{foro.html}): En esta página se ha simulado el
-  funcionamiento de un foro. En ella se observan los hilos creados por
-  distintos usuarios, y se permite acceder a dos nuevas páginas:
-  \begin{itemize}
-  \item Crear hilo (\texttt{crearhilo.html}): Aquí se muestra un
-    formulario que permite la creación de un hilo nuevo, introduciendo
-    su título y la descripción
-  \item Responder hilo (\texttt{responderhilo.html}): Este formulario
-    permite responder a un hilo ya existente.
-  \end{itemize}
-  Al igual que los anteriores, estos formularios carecen de
-  funcionalidad actualmente, funcionalidad que se implementará más
-  adelante.
+\item \texttt{generic-head.inc.php}: Este archivo se encarga de
+  imprimir una cabecera genérica para todos los archivos HTML. En
+  todos los documentos HTML que conforman la página se incluían al
+  principio la codificación que utilizaba la página (UTF-8), el nombre
+  de la misma, el autor, y los archivos CSS que especificaban el
+  estilo que tenían el menú superior y el pie de página. Para evitar
+  tener que modificar esta información en todos ellos cada vez que se
+  produjese un cambio, se ha creado este script que introduce toda
+  esta información en dichos documentos. Además, se utiliza este
+  script para introducir el script de JavaScript que define JQuery, ya
+  que todas las páginas con contenido dinámico lo necesitan. Los
+  archivos CSS específicos de cada página, no obstante, se incorporan
+  al código HTML de la misma manera que se hacía en la práctica 1.
+\item \texttt{header.inc.php}: Este archivo se encarga de imprimir
+  todo el código que se incluye en el menú superior de las páginas. De
+  la misma forma que en caso anterior, todas las páginas cuentan con
+  el menú superior en el que aparece el logo del gimnasio, el nombre
+  del mismo, y el formulario de inicio de sesión. Para poder tener
+  este menú junto con su funcionalidad en todas las páginas, se
+  imprime toda la información necesaria para que funcione el mismo
+  desde este archivo, tanto el código HTML como el script de
+  JavaScript que gestiona el formulario de login.
+\item\texttt{top-menu.inc.php}: Este archivo imprime todo el código
+  HTML que define el menú de navegación que aparece en todas las
+  páginas del sitio excepto la página principal (\texttt{index.php}).
+\item \texttt{footer.inc.php}: Este archivo imprime el pie de página
+  de la misma forma que lo hacían los anteriores. La única diferencia
+  que tiene este archivo con el resto es que en lugar de imprimir
+  directamente el código HTML, tiene una función que recibe un
+  parámetro, correspondiente a la clase que se asigna al footer. Se ha
+  hecho así porque no todas las páginas tienen el mismo footer, si no
+  que éste tiene un comportamiento distinto en las páginas cuyo
+  contenido ocupa más que la ventana y en las que esto no ocurre. De
+  esta forma, con una misma función hemos conseguido manejar estos
+  dos comportamientos, simplemente con el parámetro de la función que
+  imprime el contenido del footer.
 \end{itemize}
 
-Una vez explicada la estructura de archivos HTML, vamos a ver cómo está
-organizado el CSS de la página.
+\subsection{Archivos PHP para el manejo de la base de datos}
 
-\section{Archivos CSS de la página}
+El resto de archivos desarrollados se encargan del manejo de la base
+de datos en el servidor. Se ha intentado estructurar el código en
+clases, cada una de ellas representando cada una de las tablas de la
+base de datos que se han creado para la práctica. Vamos
+a describir más en profundidad dichas clases.\\
+
+Comenzamos hablando del archivo \texttt{db-config.inc.php}. Este
+archivo no implementa ninguna funcionalidad, sino que define las
+constantes necesarias para el funcionamiento del resto de clases.  En
+este archivo se incluye, por tanto, una constante que contiene la
+información necesaria para la conexión a la base de datos (DSN), el
+nombre de usuario y la contraseña del usuario de la base de datos, y
+constantes con el nombre de las tablas creadas
+(users, forum\_threads y forum\_responses).\\
+
+El siguiente archivo a mencionar es
+\texttt{database-management.inc.php}.  Este archivo define una clase
+abstracta que representa una tabla en la base de datos. Los métodos
+implementados en esta clase son los siguientes:
+
+\begin{itemize}
+\item \texttt{\_\_construct}: Este método es el constructor de la clase.
+  Recibe como parámetro un array y rellena otro array (atributo de la
+  clase) con la información contenida en el array que se pasa como
+  argumento.
+\item \texttt{getValue}: Esta función permite recuperar contenido del
+  array atributo de la clase, especificando el nombre que lo identifica.
+\item \texttt{connect}: Este método permite abrir una conexión con la
+  base de datos.
+\item \texttt{disconnect}: Este método cierra una conexión activa con
+  la base de datos.
+\end{itemize}
+
+El resto de clases que se describirán a continuación heredan de la
+clase comentada. Comentaremos además el resto de métodos que se
+han añadido a cada una.\\
+
+Comenzamos comentando la clase \texttt{User}, la cual se encuentra
+implementada en el archivo \texttt{user.inc.php}. Esta clase representa
+un usuario almacenado en la base de datos del sistema. Por este motivo,
+su array de datos está preparado para contener toda la información
+que se guarda de un usuario. Tiene implementados los siguientes métodos:
+
+\begin{itemize}
+\item \texttt{saveUser}: Este método guarda el usuario que llama al
+  mismo en la base de datos. Abre una conexión utilizando la función
+  de la clase que hereda, realiza la inserción, y cierra la conexión
+  al finalizar. Esta función se utiliza a la hora de dar de alta
+  a un usuario nuevo.
+\item \texttt{logUser}: Este método intenta permitir el acceso a un
+  usuario al sistema. Toma el nombre de usuario y la contraseña del
+  array de datos del que dispone, y trata de buscar en la base de
+  datos un usuario para el que coincida esa información. Si lo
+  encuentra, inicia una sesión de PHP y añade al array de sesión
+  una entrada nueva con el nombre de usuario. Si no encuentra
+  al usuario, devuelve un mensaje diciendo que no ha sido posible
+  identificar al usuario en la base de datos. Esta función se
+  utiliza cuando se intenta acceder al sistema con el menú de
+  inicio de sesión que aparece en la parte superior de todas
+  las páginas.
+\item \texttt{getUser}: Esta función de clase devuelve un usuario
+  almacenado en la base de datos dado su nombre de usuario como
+  argumento. Se utiliza para recuperar la información de un usuario
+  cuando se accede a la pestaña de perfil.
+\item \texttt{updateUser}: Esta función actualiza la información de
+  un usuario en la base de datos cuando se guarda su perfil tras
+  modificarlo. El funcionamiento es muy similar al de \texttt{saveUser},
+  con la salvedad de que ahora la sentencia es de tipo \texttt{UPDATE},
+  en lugar de \texttt{INSERT}.
+\end{itemize}
+
+Pasamos ahora a comentar
+\section{Código en JavaScript de lado del cliente}
 
 Pasamos a ver los archivos CSS que se han utilizado en la página. Se
 han creado dos conjuntos de archivos distintos, unos que se cargan
