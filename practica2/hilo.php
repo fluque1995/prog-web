@@ -30,10 +30,10 @@
     echo '</section>';
     echo '</article>';
 ?>
-       <hr>
 <?php require("php-includes/forum-response.inc.php");
 $responses = ForumResponse::getResponses($_GET["thread_id"]);
 foreach($responses as $response){
+    echo "<hr>";
     echo '<article class="forum-thread">';
     echo '<section class="user-img">';
     echo '<img src="static/imgs/users/'.$response->getValue("user_image").'">';
@@ -45,9 +45,6 @@ foreach($responses as $response){
     echo "<p>".$response->getValue("response")."</p>";
     echo '</section>';
     echo '</article>';
-    if ($response !== end($responses)){
-        echo '<hr>';
-    }
 }
 if (isset($_SESSION["usr"])) {?>
         <hr>
