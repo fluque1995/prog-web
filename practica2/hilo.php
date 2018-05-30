@@ -1,21 +1,11 @@
 <!doctype HTML>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="author" content="Francisco Luque">
-    <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" type="text/css" media="(max-width: 768px)" href="static/css/mobile/topbar.css">
-    <link rel="stylesheet" type="text/css" media="(min-width: 768px)" href="static/css/topbar.css">
-
-    <link rel="stylesheet" type="text/css" media="(max-width: 768px)" href="static/css/mobile/top-menu.css">
-    <link rel="stylesheet" type="text/css" media="(min-width: 768px)" href="static/css/top-menu.css">
-    <link rel="stylesheet" type="text/css" media="(max-width: 768px)" href="static/css/mobile/footer.css">
-    <link rel="stylesheet" type="text/css" media="(min-width: 768px)" href="static/css/footer.css">
+    <?php include("php-includes/generic-head.inc.php"); ?>
      <link rel="stylesheet" type="text/css" media="(max-width: 768px)" href="static/css/mobile/foro.css">
      <link rel="stylesheet" type="text/css" media="(min-width: 768px)" href="static/css/foro.css">
      <link rel="stylesheet" type="text/css" media="(max-width: 768px)" href="static/css/mobile/responderhilo.css">
      <link rel="stylesheet" type="text/css" media="(min-width: 768px)" href="static/css/responderhilo.css">
-    <title>Awesome gym</title>
   </head>
   <body>
 <?php include("php-includes/header.inc.php"); ?>

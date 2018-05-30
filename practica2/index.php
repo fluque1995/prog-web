@@ -1,6 +1,10 @@
 <!DOCTYPE HTML>
 <HTML>
-<?php include("php-includes/head.inc.php"); ?>
+  <head>
+    <link rel="stylesheet" type="text/css" media="(min-width: 768px)" href="static/css/index.css">
+    <link rel="stylesheet" type="text/css" media="(max-width: 768px)" href="static/css/mobile/index.css">
+    <?php include("php-includes/generic-head.inc.php"); ?>
+  </head>
   <body>
 <?php include("php-includes/header.inc.php"); ?>
 <section class="main-body">
