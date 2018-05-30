@@ -1,6 +1,5 @@
 $(document).ready( function(event) {
     $('.new-thread-form').submit( function(event) {
-        event.preventDefault();
         var data_correct = true;
 
         var title = $('[name="title"]');
@@ -27,16 +26,15 @@ $(document).ready( function(event) {
             $.merge(form_json, title.serializeArray());
             $.merge(form_json, description.serializeArray());
 
-            for (var i = 0; i < form_json.length; i++){
-                console.log(form_json[i]);
-            }
             $.ajax({
                 type: 'POST',
                 url: "php-includes/create-thread.php",
                 data: form_json,
-                async: true
+                async: true,
+                success: function(){
+                    window.location.replace("/practica2/foro.php");
+                }
             });
-
         } else {
             event.preventDefault();
         }

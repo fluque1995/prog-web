@@ -89,7 +89,10 @@ $(document).ready( function(event) {
                 contentType: false,
                 url: "php-includes/update_user.php",
                 data: form_data,
-                async: true
+                async: true,
+                success: function(){
+                    window.location.replace("/practica2/perfil.php");
+                }
             });
 
         } else {

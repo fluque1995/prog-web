@@ -1,6 +1,5 @@
 $(document).ready( function(event) {
     $('#signup-form').submit( function(event) {
-        event.preventDefault();
         var data_correct = true;
         var personal_data = $('[name="first-name"],\
                                [name="family-name"],\
@@ -128,7 +127,10 @@ $(document).ready( function(event) {
                 contentType: false,
                 url: "php-includes/sign_up.php",
                 data: form_data,
-                async: true
+                async: true,
+                success : function(){
+                    window.location.replace("/practica2/index.php");
+                }
             });
 
         } else {

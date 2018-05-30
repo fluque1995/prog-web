@@ -1,6 +1,5 @@
 $(document).ready( function(event) {
     $('.response-form').submit( function(event) {
-        event.preventDefault();
         var data_correct = true;
 
         var response = $('[name="response"]');
@@ -26,7 +25,12 @@ $(document).ready( function(event) {
                 type: 'POST',
                 url: "php-includes/response-thread.php",
                 data: form_json,
-                async: true
+                async: true,
+                success: function(){
+                    window.location.replace("/practica2/hilo.php?thread_id=" +
+                                            $.urlParam("thread_id"));
+                }
+
             });
         } else {
             event.preventDefault();

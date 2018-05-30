@@ -24,7 +24,7 @@
      session_start();
 $user = User::getUser($_SESSION["usr"]);
 ?>
-        <form id="update-form" action="php-includes/update_user.php" method="post" enctype="multipart/form-data">
+        <form id="update-form" action="" method="post" enctype="multipart/form-data">
           <header>
             <h1>DATOS PERSONALES</h1>
           </header>

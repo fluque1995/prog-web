@@ -22,7 +22,7 @@
     <section class="main-body">
       <h2 class="ribbon">CREAR NUEVO HILO</h2>
       <section class="new-thread-form">
-        <form action="php-includes/create-thread.php" method="post">
+        <form action="" method="post">
           <header>
             <h1>NUEVO HILO</h1>
           </header>

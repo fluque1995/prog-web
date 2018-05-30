@@ -41,8 +41,8 @@
           <section class="price">
             <h1>15</h1> €/mes
           </section>
-          <a href="altausuario.html">
-            <button type="button" action="altausuario.html" class="purchase-button">Contratar</button>
+          <a href="altausuario.php">
+            <button type="button" class="purchase-button">Contratar</button>
           </a>
         </section>
       </section>
@@ -69,8 +69,8 @@
           <section class="price">
             <h1>20</h1> €/mes
           </section>
-          <a href="altausuario.html">
-            <button type="button" action="altausuario.html" class="purchase-button">Contratar</button>
+          <a href="altausuario.php">
+            <button type="button" class="purchase-button">Contratar</button>
           </a>
         </section>
       </section>
@@ -97,8 +97,8 @@
           <section class="price">
             <h1>30</h1> €/mes
           </section>
-          <a href="altausuario.html">
-            <button type="button" action="altausuario.html" class="purchase-button">Contratar</button>
+          <a href="altausuario.php">
+            <button type="button" class="purchase-button">Contratar</button>
           </a>
         </section>
       </section>

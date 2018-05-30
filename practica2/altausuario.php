@@ -20,7 +20,7 @@
     <section class="main-body">
       <h2 class="ribbon">ALTA DE USUARIO</h2>
       <section class="signup-form">
-        <form id="signup-form" action="php-includes/sign_up.php" method="post" enctype="multipart/form-data">
+        <form id="signup-form" action="" method="post" enctype="multipart/form-data">
           <header>
             <h1>DATOS PERSONALES</h1>
           </header>
