@@ -1,7 +1,7 @@
 <!doctype HTML>
 <html>
   <head>
-    <?php include("php-includes/generic-head.inc.php"); ?>
+<?php include("php-includes/generic-head.inc.php"); ?>
      <link rel="stylesheet" type="text/css" media="(max-width: 768px)" href="static/css/mobile/foro.css">
      <link rel="stylesheet" type="text/css" media="(min-width: 768px)" href="static/css/foro.css">
      <link rel="stylesheet" type="text/css" media="(max-width: 768px)" href="static/css/mobile/responderhilo.css">
@@ -45,7 +45,8 @@ foreach($responses as $response){
         echo '<hr>';
     }
 }
-?>
+if (isset($_SESSION["usr"])) {?>
+        <hr>
         <section class="response-inline-form">
           <form action="php-includes/response-thread.php" method="post">
             <textarea class="long-form-input" cols="80" rows="5" id="response"
@@ -53,7 +54,9 @@ foreach($responses as $response){
             <input type="submit" class="button" id="response-button" value="Enviar">
           </form>
         </section>
+<?php } ?>
       </section>
+     <script src="static/js/createResponse.js"></script>
     </section>
 <?php
 include("php-includes/footer.inc.php");

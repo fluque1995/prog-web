@@ -12,8 +12,45 @@ $(document).ready( function(event) {
         }
 
         $.urlParam = function(name){
-	    var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
-	    return results[1] || 0;
+            var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+            return results[1] || 0;
+        }
+
+        if (data_correct){
+            var form_json = [{name: 'thread_id', value: $.urlParam("thread_id")}];
+
+            $.merge(form_json, response.serializeArray());
+
+            $.ajax({
+                type: 'POST',
+                url: "php-includes/response-thread.php",
+                data: form_json,
+                async: true,
+                success: function(){
+                    window.location.replace("/practica2/hilo.php?thread_id=" +
+                                            $.urlParam("thread_id"));
+                }
+
+            });
+        } else {
+            event.preventDefault();
+        }
+    });
+
+    $('.response-inline-form').submit( function(event) {
+        var data_correct = true;
+
+        var response = $('[name="response"]');
+        response.css("border", "1px solid #DDDDDD");
+        if (response.val().trim().length === 0){
+            data_correct = false;
+            response.css("border","1px solid #FF0000");
+            alert("Ha intentado enviar una respuesta vacía")
+        }
+
+        $.urlParam = function(name){
+            var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+            return results[1] || 0;
         }
 
         if (data_correct){

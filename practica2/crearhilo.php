@@ -25,7 +25,6 @@
           <input type="submit" class="button" id="new-thread-button" value="Enviar">
         </form>
       </section>
-     <script src="static/js/jquery-3.3.1.min.js"></script>
      <script src="static/js/createThread.js"></script>
     </section>
 <?php

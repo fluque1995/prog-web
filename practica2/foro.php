@@ -11,9 +11,13 @@
     <section class="main-body">
       <section class="ribbon-forum">
         <h2 class="ribbon">FORO</h2>
-     <a href="crearhilo.php">
+<?php session_start();
+     if (isset($_SESSION["usr"])){
+     echo '<a href="crearhilo.php">
           <button type="button" class="button" action="crearhilo.php">Crear hilo</button>
-        </a>
+        </a>';
+     }
+     ?>
       </section>
       <section class="forum-threads-container">
 <?php require("php-includes/forum-thread.inc.php");
@@ -30,9 +34,11 @@ foreach($threads as $thread){
     echo '</a>';
     echo "<p>".$thread->getValue("description")."</p>";
     echo '</section>';
-    echo '<a href="responderhilo.php?thread_id='.$thread->getValue("thread_id").'">';
-    echo '<button type="button" class="button">Responder</button>';
-    echo '</a>';
+if(isset($_SESSION["usr"])){
+echo '<a href="responderhilo.php?thread_id='.$thread->getValue("thread_id").'">';
+echo '<button type="button" class="button">Responder</button>';
+echo '</a>';
+}
     echo '</article>';
     if ($thread !== end($threads)){
         echo '<hr>';
