@@ -11,8 +11,10 @@
     <link rel="stylesheet" type="text/css" media="(min-width: 768px)" href="static/css/top-menu.css">
     <link rel="stylesheet" type="text/css" media="(max-width: 768px)" href="static/css/mobile/footer.css">
     <link rel="stylesheet" type="text/css" media="(min-width: 768px)" href="static/css/footer.css">
-    <link rel="stylesheet" type="text/css" media="(max-width: 768px)" href="static/css/mobile/foro.css">
-    <link rel="stylesheet" type="text/css" media="(min-width: 768px)" href="static/css/foro.css">
+     <link rel="stylesheet" type="text/css" media="(max-width: 768px)" href="static/css/mobile/foro.css">
+     <link rel="stylesheet" type="text/css" media="(min-width: 768px)" href="static/css/foro.css">
+     <link rel="stylesheet" type="text/css" media="(max-width: 768px)" href="static/css/mobile/responderhilo.css">
+     <link rel="stylesheet" type="text/css" media="(min-width: 768px)" href="static/css/responderhilo.css">
     <title>Awesome gym</title>
   </head>
   <body>
@@ -54,6 +56,13 @@ foreach($responses as $response){
     }
 }
 ?>
+        <section class="response-inline-form">
+          <form action="php-includes/response-thread.php" method="post">
+            <textarea class="long-form-input" cols="80" rows="5" id="response"
+            name="response" placeholder="Introducir respuesta"></textarea>
+            <input type="submit" class="button" id="response-button" value="Enviar">
+          </form>
+        </section>
       </section>
     </section>
 <?php

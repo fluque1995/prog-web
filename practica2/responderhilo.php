@@ -19,7 +19,7 @@
 <?php include("php-includes/top-menu.inc.php"); ?>
     <section class="main-body">
       <h2 class="ribbon">RESPONDER HILO</h2>
-      <section class="response-form">
+     <section class="response-form">
         <form action="php-includes/response-thread.php" method="post">
           <header>
             <h1>RESPUESTA</h1>

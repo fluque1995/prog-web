@@ -77,3 +77,44 @@
 .main-body .response-form .button:hover{
     background-color: #111111;
 }
+
+.main-body .response-inline-form fieldset{
+    border: none;
+}
+
+.main-body .response-inline-form .long-form-input{
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 2vh 2vw 2vh 2vw;
+    font-family: helvetica;
+    margin: 1vh 1vw 1vh 3%;
+    width: 70%;
+    height: 20vh;
+    resize: none;
+    background-color: #FAFAFA;
+    border-radius: 2vw;
+    text-align: left;
+    border: 1px solid #DDDDDD;
+}
+
+.main-body .response-inline-form .long-form-input:focus{
+    outline: none;
+    border: 1px solid #101060;
+}
+
+.main-body .response-inline-form .button{
+    vertical-align: middle;
+    display: inline;
+    box-sizing: border-box;
+    width: 10%;
+    margin: 1vh 1vw 2vh 1vw;
+    height: 4vh;
+    border-radius: 2vw;
+    border: none;
+    color: white;
+    background-color: #57b846;
+}
+
+.main-body .response-inline-form .button:hover{
+    background-color: #111111;
+}
