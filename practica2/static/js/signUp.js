@@ -74,7 +74,7 @@ $(document).ready( function(event) {
             pass2.after("<p>Las contraseñas no coinciden</p>");
         }
 
-        var number_regexp = /^\d+$/;
+        var number_regexp = /^+?\d+$/;
         var mobile_number = $('[name="mobile-phone"]');
         mobile_number.next('p').remove();
         mobile_number.css("border", "1px solid #DDDDDD");
