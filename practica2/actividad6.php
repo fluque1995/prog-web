@@ -6,32 +6,8 @@
     <link rel="stylesheet" type="text/css" media="(min-width: 768px)" href="static/css/actividad.css">
   </head>
   <body>
-    <header class="topbar">
-      <a href="index2.html">
-        <img src="static/imgs/logo.png" id="logo" alt="Volver al inicio">
-      </a>
-      <section id="gym-name">
-        <h1>AWESOME GYM</h1>
-      </section>
-      <section class="login-info">
-        <h2>BIENVENIDO</h2>
-        <p>Usuario: fluque1995</p>
-        <a href="index.html">
-          <button type="button" action="index.html" id="logout-button">Salir</button>
-        </a>
-      </section>
-    </header>
-    <ul class="top-menu">
-      <li><a href="index2.html">Inicio</a></li>
-      <li><a href="actividades.html">Actividades</a></li>
-      <li><a href="horario.html">Horario</a></li>
-      <li><a href="tecnicos.html">Técnicos</a></li>
-      <li><a href="servicios.html">Servicios</a></li>
-      <li><a href="localizacion.html">Localización</a></li>
-      <li><a href="precios.html">Precios</a></li>
-      <li><a href="altausuario.html">Alta usuarios</a></li>
-      <li><a href="foro.html">Foro</a></li>
-    </ul>
+<?php include("php-includes/header.inc.php"); ?>
+<?php include("php-includes/top-menu.inc.php"); ?>
     <section class="main-body">
       <section class="activity-info-container">
         <h2 class="ribbon">EQUIPO DE FÚTBOL</h2>
@@ -58,42 +34,42 @@
             <img src="static/imgs/activities/yoga.jpg">
             <section class="text">
               <h1>Clases de Yoga</h1>
-              <a href="actividad1.html">Más información</a>
+              <a href="actividad1.php">Más información</a>
             </section>
           </section>
           <section class="activity-container">
             <img src="static/imgs/activities/karate.jpg">
             <section class="text">
               <h1>Kárate</h1>
-              <a href="actividad2.html">Más información</a>
+              <a href="actividad2.php">Más información</a>
             </section>
           </section>
           <section class="activity-container">
             <img src="static/imgs/activities/dance.jpg">
             <section class="text">
               <h1>Sesiones de baile</h1>
-              <a href="actividad3.html">Más información</a>
+              <a href="actividad3.php">Más información</a>
             </section>
           </section>
           <section class="activity-container">
             <img src="static/imgs/activities/running.jpg">
             <section class="text">
               <h1>Iniciación al atletismo</h1>
-              <a href="actividad4.html">Más información</a>
+              <a href="actividad4.php">Más información</a>
             </section>
           </section>
           <section class="activity-container">
             <img src="static/imgs/activities/tennis.jpg">
             <section class="text">
               <h1>Clases de tenis</h1>
-              <a href="actividad5.html">Más información</a>
+              <a href="actividad5.php">Más información</a>
             </section>
           </section>
           <section class="activity-container">
             <img src="static/imgs/activities/football.jpg">
             <section class="text">
               <h1>Equipo de fútbol</h1>
-              <a href="actividad6.html">Más información</a>
+              <a href="actividad6.php">Más información</a>
             </section>
           </section>
         </section>

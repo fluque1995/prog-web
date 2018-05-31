@@ -6,37 +6,13 @@
     <link rel="stylesheet" type="text/css" media="(min-width: 768px)" href="static/css/actividad.css">
   </head>
   <body>
-    <header class="topbar">
-      <a href="index2.html">
-        <img src="static/imgs/logo.png" id="logo" alt="Volver al inicio">
-      </a>
-      <section id="gym-name">
-        <h1>AWESOME GYM</h1>
-      </section>
-      <section class="login-info">
-        <h2>BIENVENIDO</h2>
-        <p>Usuario: fluque1995</p>
-        <a href="index.html">
-          <button type="button" action="index.html" id="logout-button">Salir</button>
-        </a>
-      </section>
-    </header>
-    <ul class="top-menu">
-      <li><a href="index2.html">Inicio</a></li>
-      <li><a href="actividades.html">Actividades</a></li>
-      <li><a href="horario.html">Horario</a></li>
-      <li><a href="tecnicos.html">Técnicos</a></li>
-      <li><a href="servicios.html">Servicios</a></li>
-      <li><a href="localizacion.html">Localización</a></li>
-      <li><a href="precios.html">Precios</a></li>
-      <li><a href="altausuario.html">Alta usuarios</a></li>
-      <li><a href="foro.html">Foro</a></li>
-    </ul>
+<?php include("php-includes/header.inc.php"); ?>
+<?php include("php-includes/top-menu.inc.php"); ?>
     <section class="main-body">
       <section class="activity-info-container">
-        <h2 class="ribbon">CLASES DE TENIS</h2>
+        <h2 class="ribbon">KÁRATE</h2>
         <section class="activity-info">
-          <img src="static/imgs/activities/tennis.jpg">
+          <img src="static/imgs/activities/karate.jpg">
           <section class="activity-description">
             <h2>DESCRIPCIÓN DE LA ACTIVIDAD</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris fermentum sapien mi. Etiam eget lectus dignissim, finibus mauris vitae, vestibulum velit. Praesent pharetra pretium tortor eu ornare. Ut et justo varius, sodales ante non, pulvinar nulla. Nunc facilisis ornare arcu ut cursus. Vivamus mattis in arcu a porta. Cras eget efficitur mi, ut dignissim enim. Donec in rutrum est. Suspendisse eu orci lacinia, laoreet lectus nec, tempor dolor. Aliquam faucibus mollis augue, eu vehicula leo mattis sit amet. Sed nisi elit, porta vel odio non, finibus aliquet libero. Morbi non nibh faucibus, tempus est sed, mattis mi. Sed pharetra nisi vitae pulvinar venenatis. Ut pulvinar ante elementum, feugiat elit ut, ultrices purus. Pellentesque auctor vel ipsum nec semper. Quisque tincidunt quam et vehicula iaculis.</p>
@@ -44,9 +20,9 @@
             <p>Morbi molestie sagittis nunc, bibendum malesuada neque luctus id. Suspendisse elementum dolor sed egestas imperdiet. Cras et velit ut metus imperdiet dignissim. Donec venenatis efficitur commodo. In pellentesque turpis metus, sit amet pulvinar nulla rhoncus et. Sed aliquam fringilla risus, vitae laoreet felis tincidunt a. Mauris arcu diam, ullamcorper sit amet vehicula id, bibendum a arcu. In at hendrerit nisi, sit amet pharetra urna. Vestibulum vitae mattis quam. Nunc aliquet rutrum enim, ac auctor neque. Cras bibendum aliquet fringilla. In hac habitasse platea dictumst. Suspendisse potenti. Vivamus finibus consectetur justo ut interdum. In blandit eros nec neque aliquam, eu ullamcorper nibh fermentum.</p>
             <h2>HORARIO</h2>
             <ul>
-              <li>Martes: 15:00 a 17:00</li>
+              <li>Martes: 11:00 a 12:00</li>
               <br>
-              <li>Viernes: 16:00 a 17:00</li>
+              <li>Jueves: 12:00 a 13:00</li>
               <br>
             </ul>
           </section>
@@ -59,42 +35,42 @@
             <img src="static/imgs/activities/yoga.jpg">
             <section class="text">
               <h1>Clases de Yoga</h1>
-              <a href="actividad1.html">Más información</a>
+              <a href="actividad1.php">Más información</a>
             </section>
           </section>
           <section class="activity-container">
             <img src="static/imgs/activities/karate.jpg">
             <section class="text">
               <h1>Kárate</h1>
-              <a href="actividad2.html">Más información</a>
+              <a href="actividad2.php">Más información</a>
             </section>
           </section>
           <section class="activity-container">
             <img src="static/imgs/activities/dance.jpg">
             <section class="text">
               <h1>Sesiones de baile</h1>
-              <a href="actividad3.html">Más información</a>
+              <a href="actividad3.php">Más información</a>
             </section>
           </section>
           <section class="activity-container">
             <img src="static/imgs/activities/running.jpg">
             <section class="text">
               <h1>Iniciación al atletismo</h1>
-              <a href="actividad4.html">Más información</a>
+              <a href="actividad4.php">Más información</a>
             </section>
           </section>
           <section class="activity-container">
             <img src="static/imgs/activities/tennis.jpg">
             <section class="text">
               <h1>Clases de tenis</h1>
-              <a href="actividad5.html">Más información</a>
+              <a href="actividad5.php">Más información</a>
             </section>
           </section>
           <section class="activity-container">
             <img src="static/imgs/activities/football.jpg">
             <section class="text">
               <h1>Equipo de fútbol</h1>
-              <a href="actividad6.html">Más información</a>
+              <a href="actividad6.php">Más información</a>
             </section>
           </section>
         </section>

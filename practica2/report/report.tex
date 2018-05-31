@@ -436,7 +436,7 @@ la página. Los errores que se han contemplado son los siguientes:
 \item La dirección de correo introducida no es una dirección de correo
   válida. Para esto, se ha tomado una expresión regular que comprueba
   si una cadena de texto tiene el formato de una dirección de correo
-  electrónico (una cadena de caracteres seguida de una \@ y seguida de
+  electrónico (una cadena de caracteres seguida de una @ y seguida de
   otra cadena de caracteres en la que al menos hay un punto)
 \item La contraseña introducida es demasiado corta. Se considera que
   una contraseña con menos de 8 caracteres es corta, y no se acepta en
@@ -480,11 +480,39 @@ la página web puedan ser enviados por métodos externos y aún así esté
 perfectamente identificado el hilo al que nos referimos. Por ejemplo,
 se podría querer mandar por correo electrónico la URL que muestra la
 información relativa al hilo con identificador $n$. En este caso, la
-URL en cuestión sería
-\texttt{betatun.ugr.es/\textasciitilde x31008316/centrodeportivoII/hilo.php?thread\_id=n}.
+URL en cuestión sería \url{betatun.ugr.es/\~
+  x31008316/centrodeportivoII/hilo.php?thread\_id=n}.  Dado que esta
+información no es sensible, no hay ningún problema a priori al
+mandarlo a través de la URL, y así se evita la problemática de tener
+que acceder a los hilos a través de la página principal del foro, cosa
+que tendría que hacerse si se mandara la información a través de
+POST. Una vez hecha esta salvedad, el funcionamiento del script de
+JavaScript es muy similar al resto. Recupera de la URL el
+identificador del hilo, del formulario la respuesta registrada y envía
+toda la información con una petición AJAX al script de PHP
+\texttt{response-thread.php}.\\
+
+Finalmente, queda el archivo \texttt{showThreads.js}. Este script es
+el que se encarga de mostrar los hilos que ha creado un usuario cuando
+se pasa el ratón por encima de una imagen. Para ello, se declaran dos
+funciones que se ejecutan cuando se produce el evento \texttt{hover}
+en una imagen (este evento corresponde a colocar el ratón encima de la
+misma). La primera de las funciones se ejecuta cuando empieza a
+producirse el evento (se coloca el ratón encima de la foto) y la
+segunda cuando deja de producirse (se retira el ratón de la foto). La
+primera de las funciones lo que hace es seleccionar un elemento que se
+encuentra oculto cuya clase es \texttt{threads-container}, y que tiene
+la información de los hilos del foro creados por el usuario de la
+foto. Una vez lo tiene seleccionado, utiliza la función CSS del
+selector para modificar su CSS y cambia la propiedad \texttt{display}
+de \texttt{none} a \texttt{inline}, mostrando el contenedor. La
+segunda función, hace la operación contraria. Selecciona el mismo
+contenedor, y modifica el valor de la propiedad \texttt{display} de
+CSS, ahora de \texttt{inline} a \texttt{none}, volviéndolo a ocultar.
 
 \section{Bibliografía}
 
+\nocite{*}
 \printbibliography
 
 \end{document}
