@@ -94,7 +94,7 @@ El código desarrollado para dotar a la página web de contenido
 dinámico del lado del servidor se ha hecho utilizando PHP. Con este
 lenguaje se gestionan todas las consultas a la base de datos, así como
 la inclusión de contenido redundante en todos los documentos HTML que
-conforman la página. Todos los archivos PHP con código PHP puro que se
+conforman la página. Todos los archivos con código PHP puro que se
 han desarrollado se encuentran dentro de la carpeta
 \texttt{php-includes}. Comentaremos brevemente cómo se han
 estructurado los \textit{scripts} PHP dependiendo de la función que
@@ -169,12 +169,13 @@ abstracta que representa una tabla en la base de datos. Los métodos
 implementados en esta clase son los siguientes:
 
 \begin{itemize}
-\item \texttt{\_\_construct}: Este método es el constructor de la clase.
-  Recibe como parámetro un array y rellena otro array (atributo de la
-  clase) con la información contenida en el array que se pasa como
-  argumento.
+\item \texttt{\_\_construct}: Este método es el constructor de la
+  clase.  Recibe como parámetro un array y rellena otro array
+  (atributo de la clase) con la información contenida en el array que
+  se pasa como argumento.
 \item \texttt{getValue}: Esta función permite recuperar contenido del
-  array atributo de la clase, especificando el nombre que lo identifica.
+  array atributo de la clase, especificando el nombre que lo
+  identifica.
 \item \texttt{connect}: Este método permite abrir una conexión con la
   base de datos.
 \item \texttt{disconnect}: Este método cierra una conexión activa con
@@ -186,175 +187,301 @@ clase comentada. Comentaremos además el resto de métodos que se
 han añadido a cada una.\\
 
 Comenzamos comentando la clase \texttt{User}, la cual se encuentra
-implementada en el archivo \texttt{user.inc.php}. Esta clase representa
-un usuario almacenado en la base de datos del sistema. Por este motivo,
-su array de datos está preparado para contener toda la información
-que se guarda de un usuario. Tiene implementados los siguientes métodos:
+implementada en el archivo \texttt{user.inc.php}. Esta clase
+representa un usuario almacenado en la base de datos del sistema. Por
+este motivo, su array de datos está preparado para contener toda la
+información que se guarda de un usuario. Tiene implementados los
+siguientes métodos:
 
 \begin{itemize}
 \item \texttt{saveUser}: Este método guarda el usuario que llama al
   mismo en la base de datos. Abre una conexión utilizando la función
   de la clase que hereda, realiza la inserción, y cierra la conexión
-  al finalizar. Esta función se utiliza a la hora de dar de alta
-  a un usuario nuevo.
+  al finalizar. Esta función se utiliza a la hora de dar de alta a un
+  usuario nuevo.
 \item \texttt{logUser}: Este método intenta permitir el acceso a un
   usuario al sistema. Toma el nombre de usuario y la contraseña del
   array de datos del que dispone, y trata de buscar en la base de
   datos un usuario para el que coincida esa información. Si lo
-  encuentra, inicia una sesión de PHP y añade al array de sesión
-  una entrada nueva con el nombre de usuario. Si no encuentra
-  al usuario, devuelve un mensaje diciendo que no ha sido posible
-  identificar al usuario en la base de datos. Esta función se
-  utiliza cuando se intenta acceder al sistema con el menú de
-  inicio de sesión que aparece en la parte superior de todas
-  las páginas.
+  encuentra, inicia una sesión de PHP y añade al array de sesión una
+  entrada nueva con el nombre de usuario. Si no encuentra al usuario,
+  devuelve un mensaje diciendo que no ha sido posible identificar al
+  usuario en la base de datos. Esta función se utiliza cuando se
+  intenta acceder al sistema con el menú de inicio de sesión que
+  aparece en la parte superior de todas las páginas.
 \item \texttt{getUser}: Esta función de clase devuelve un usuario
   almacenado en la base de datos dado su nombre de usuario como
   argumento. Se utiliza para recuperar la información de un usuario
   cuando se accede a la pestaña de perfil.
-\item \texttt{updateUser}: Esta función actualiza la información de
-  un usuario en la base de datos cuando se guarda su perfil tras
-  modificarlo. El funcionamiento es muy similar al de \texttt{saveUser},
-  con la salvedad de que ahora la sentencia es de tipo \texttt{UPDATE},
-  en lugar de \texttt{INSERT}.
+\item \texttt{updateUser}: Esta función actualiza la información de un
+  usuario en la base de datos cuando se guarda su perfil tras
+  modificarlo. El funcionamiento es muy similar al de
+  \texttt{saveUser}, con la salvedad de que ahora la sentencia es de
+  tipo \texttt{UPDATE}, en lugar de \texttt{INSERT}.
 \end{itemize}
 
-Pasamos ahora a comentar
-\section{Código en JavaScript de lado del cliente}
-
-Pasamos a ver los archivos CSS que se han utilizado en la página. Se
-han creado dos conjuntos de archivos distintos, unos que se cargan
-cuando la página web se está consultando desde un ordenador (la
-anchura de la página es mayor a 768 píxeles) y otros que se cargan
-cuando se accede a la página desde ún móvil (la anchura del
-dispositivo es menor a 768 píxeles). Para un desarrollo realmente
-completo se habría tenido que especificar la configuración para otros
-tamaños, pero dado que lo que se pretende con la práctica es aprender
-el funcionamiento básico de CSS no se ha profundizado más en este
-apartado. En realidad, si lo que se busca es crear un página
-completamente responsive, crear el CSS desde cero es una tarea muy
-costosa, y probablemente, teniendo en cuenta la cantidad de
-dispositivos distintos que existen actualmente, cada uno con sus
-dimensiones particulares, sería prácticamente imposible que la
-visualización fuera perfecta en todos ellos. Usualmente, lo que se
-hace en estos casos es utilizar librerías ya creadas que se preocupan
-en que el diseño de las páginas web sea completamente responsive. De
-esta forma, el desarrollador web no tiene que preocuparse de que la
-página se visualice correctamente en todos los dispositivos, sino que
-es la propia librería la que le aporta las herramientas para
-conseguirlo de forma cómoda. Un ejemplo de estas librerías,
-probablemente la más extendida, es \textit{Bootstrap}
-\cite{bootstrap}, desarrollada por el equipo de \textit{Twitter}.
-
-Veamos a continuación los diferentes archivos CSS que se utilizan en
-la página web:
+Pasamos ahora a comentar la clase \texttt{ForumThread}, que representa
+un hilo del foro. Está implementada en el archivo
+\texttt{forum-thread.inc.php}. Esta clase guarda en el array de datos
+algunas entradas que no pertenecen estrictamente a la tabla
+\texttt{forum\_threads} de la base de datos. Concretamente, además de
+la información del hilo, guarda el nombre completo y la ruta a la
+imagen del usuario creador del hilo. Se hace esto para simplificar la
+recolección de información a la hora de mostrar los hilos en el
+foro. Los métodos implementados en esta clase son los siguientes:
 
 \begin{itemize}
-\item \texttt{topbar.css}: En este CSS se establece el estilo de la
-  barra superior de la página, en la que se muestra el logo de la
-  misma, el nombre del gimnasio, y la información sobre la
-  autenticación del usuario.
-\item \texttt{top-menu.css}: En este CSS se establece el estilo del
-  menú superior, que aparece en todas las páginas excepto en la
-  principal, y es la que nos permite movernos por todo el sitio
-  web. Una particularidad de este menú es que se ha conseguido que al
-  descender por la página, el mismo ocupe siempre la parte superior,
-  de forma que siempre sea visible.  Así, aunque un usuario se
-  encuentre en la parte inferior de una página, podrá dirigirse a otra
-  página sin tener que volver a subir. Esto se consigue con una
-  combinación de la propiedad \texttt{position: sticky}, que permite
-  desplazar un elemento con el resto de la página cuando al hacer
-  \texttt{scroll} debería quedarse oculto, y la propiedad
-  \texttt{z-index}, que permite que un elemento quede por encima del
-  resto cuando se superponen.
-\item \texttt{footer.css}: En este CSS se establece el estilo del pie
-  de página. Este componente se puede observar en la parte inferior de
-  todas las páginas. Se han desarrollado dos clases distintas para el
-  pie. Una de ellas se mantiene en la parte inferior de la página
-  independientemete del tamaño que ocupe el contenido de la misma, que
-  se usa en las páginas en las que el contenido no rellena
-  completamente la pantalla, como la página de inicio o la página de
-  actividades. La otra coloca el footer debajo de todo el
-  contenido. Esto se ha hecho para que, en las páginas que hay poco
-  contenido, se rellene la pantalla completamente, a fin de no romper
-  la estética de la misma.
-\item Archivos \texttt{nombre-pagina.css}: Por cada página HTML que
-  hay creada, se tiene además un archivo CSS en el que se especifica
-  el estilo del contenido que hay en la página. Se ha optado por
-  organizar el CSS de esta forma porque cada página tiene un contenido
-  específico y distinto de las demás. De esta manera, la estructura de
-  archivos permite encontrar el CSS referente a cada página de forma
-  más sencilla, por si hay que realizar alguna modificación. Se podría
-  haber optado, en algunos casos, por utilizar la misma hoja de
-  estilos para más de una página, como es el caso de las páginas
-  \texttt{servicios.html} y \texttt{tecnicos.html}, en los que la
-  estructura que siguen ambas es muy similar. No obstante, se ha
-  optado finalmente por la organización separada, para poder controlar
-  de forma independiente ambas páginas en caso de que fuera necesario.
+\item \texttt{createThread}: Esta función guarda en la base de datos
+  el hilo que realiza la llamada a la misma. Al igual que ocurría con
+  la función \texttt{saveUser}, esta función abre una conexión a la
+  base de datos usando la función de la clase padre, realiza la
+  consulta de tipo \texttt{INSERT}, y cierra la conexión.
+\item \texttt{getThreads}: Función de clase que devuelve todas las
+  hebras que hay en la base de datos. Se utiliza esta función para
+  crear la vista principal del foro.
+\item \texttt{getThread}: Esta función de clase recibe como parámetro
+  el identificador de un hilo y devuelve un objeto de la clase
+  \texttt{ForumThread} con toda la información referente al mismo.  Se
+  utiliza esta función para mostrar la información de un hilo
+  específico en su página detalle.
+\item \texttt{getThreadsFromUser}: Esta función de clase recibe como
+  argumento un identificador de usuario y devuelve todos los hilos del
+  foro escritos por este usuario, junto con sus identificadores. Se
+  utiliza esta función para recuperar todos los hilos de un usuario y
+  mostrarlos cuando se pasa el ratón por encima de su imagen en el
+  foro.
 \end{itemize}
 
-Los archivos indicados anteriormente se encuentran en el directorio
-\texttt{static/css}. Además de estos archivos, dentro de este
-directorio se encuentra la carpeta \texttt{mobile}. En ella se
-encuentran los mismos archivos indicados anteriormente, pero en la
-versión móvil. De nuevo, se podría haber tenido un solo archivo con el
-CSS para cada página, y que las \textit{media queries} se realizasen
-dentro del propio CSS, pero buscando una organización más modular del
-código, dicha \textit{media query} se hace en el HTML, y se carga un
-CSS u otro dependiendo del tamaño del dispositivo que acceda a la
+La última clase implementada es \texttt{ForumResponse}, que representa
+una respuesta a un hilo del foro. Se encuentra en el archivo
+\texttt{forum-response.inc.php} Esta clase, al igual que la anterior,
+guarda información sobre una respuesta, así como el nombre y la ruta a
+la imagen del usuario que ha registrado la respuesta. Esta clase sólo
+cuenta con dos métodos, el método \texttt{createResponse}, que guarda
+la respuesta en la base de datos, y la función de clase
+\texttt{getResponses}, que dado el identificador de un hilo devuelve
+un array con los objetos de la clase \texttt{ForumResponse} que
+representan todas las respuestas que se han dado a ese hilo. Este
+método se utiliza a la hora de recuperar todas las respuestas a un
+hilo para mostrarlas en la página de detalle del mismo.\\
+
+Se explican a continuación los scripts que gestionan los distintos
+formularios que aparecen en la página web. Comenzamos comentando el
+archivo \texttt{log\_user.php}. Este archivo gestiona la
+identificación de usuarios del lado del servidor. Este archivo recoge
+por POST la información que se ha introducido en el cuadro de
+identificación de usuario que aparece en el menú superior de la
+página, crea un usuario con el nombre de usuario y la contraseña
+especificados, y llama a la función \texttt{logUser} de la clase
+\texttt{User} explicada anteriormente. Como ya dijimos, esta función
+devuelve una cadena de texto que indica si el usuario ha sido
+correctamente identificado en el sistema (el nombre de usuario y
+contraseña especificados corresponden a un usuario registrado en la
+base de datos) o si no ha sido posible encontrar dicho
+usuario. Dependiendo de la respuesta que de dicha función, un script
+de JavaScript que comentaremos más adelante se encargará de avisar al
+usuario de que no se ha introducido
+la información correcta o dará al usuario por identificado.\\
+
+El siguiente archivo que maneja formularios es \texttt{logout.php}.
+Se llama a este archivo cuando se pulsa el botón de salir del menú
+superior, el cual se muestra cuando un usuario está identificado y con
+una sesión abierta. Este archvo lo único que hace es abrir la sesión,
+eliminar el elemento ``usr'' del array de sesión, y redirigir a la
+página principal.\\
+
+Otro de los archivos que gestiona formularios es
+\texttt{sign\_up.php}.  Este archivo se encarga de dar de alta a un
+nuevo usuario en el sistema. Recoge por POST toda la información de
+usuario introducida, crea un usuario con dicha información, y llama a
+la función \texttt{saveUser}. Además, coge la foto subida por el
+usuario del array FILES y la coloca en la carpeta
+\texttt{/static/imgs/users}
+del servidor.\\
+
+El siguiente archivo de gestión de formularios es
+\texttt{update\_user.php}. Este tiene un funcionamiento muy similar al
+anterior. Recoge por POST la información del usuario, crea un objeto
+de la clase \texttt{User}, y llama a la función \texttt{updateUser}.
+
+Pasamos ahora a comentar los archivos que gestionan los formularios
+del foro. Tenemos dos archivos dedicados a esta tarea. Uno de ellos es
+\texttt{create-thread.php}, que se encarga de crear un hilo nuevo.
+Este archivo recoge por POST el título y el cuerpo del hilo, y del
+array de sesión el nombre del usuario que está identificado, crea un
+hilo con esa información y lo guarda en la base de datos. El otro
+archivo es \texttt{response-thread.php}, que registra una respuesta a
+un hilo, cogiendo por POST el cuerpo de la respuesta y el ID del hilo
+que se quiere responder, y del array de sesión el nombre de usuario
+que registra la respuesta.
+
+\subsection{Código en PHP para mostrar contenido en los documentos
+  HTML}
+
+Además del código PHP que se encuentra en los archivos mencionados
+anteriormente, hay pequeños fragmentos de código en PHP dentro de los
+archivos HTML de la página, que permiten mostrar un contenido u otro
+dependiendo de la información que está guardada en la base de
+datos, así como de si hay un usuario con una sesión abierta o no.\\
+
+Lo primero que comentaremos es el comportamiento de la página en
+función de si hay o no un usuario con una sesión abierta. Hay tres
+partes de la página que modifican su comportamiento en este caso.  Por
+un lado, en el menú superior, si no hay un usuario identificado se
+muestra el formulario de inicio de sesión. Si dicha sesión sí que
+existe, se muestra el nombre del usuario que hay identificado junto
+con un botón para cerrar sesión. Otra parte en la que el
+comportamiento es distinto es en el foro. Al contrario que en la
+práctica anterior, ahora se permite que una persona sin identificar
+navegue por la página. Esto se hace porque no tiene mucho sentido que
+una persona sin identificar esté obligada a crear un usuario para
+recibir información sobre el centro deportivo. No obstante, no se
+quiere que un usuario no identificado pueda añadir nuevos hilos al
+foro o responder a los ya existentes. Teniendo esta idea en mente, lo
+que se hace es que si no hay un usuario con una sesión abierta, en el
+foro no se muestran los botones ni los formularios que permiten crear
+nuevos hilos ni responder a los que ya existen. Finalmente, en los
+menús de la página no se muestra la pestaña de perfil si el usuario no
+está identificado. Esto se debe a que esa pestaña está pensada para
+que un usuario del sistema modifique su información. Si no hay un
+usuario identificado, no hay usuario al que modificar, y por tanto
+esta pestaña es inútil.\\
+
+Ahora, como última funcionalidad de la página escrita en PHP se tiene
+el mostrar contenido de forma dinámica en función de lo que hay
+guardado en la base de datos. Existe funcionalidad de este tipo en dos
+partes de la página. Por un lado, en el perfil del usuario, se utiliza
+la información del usuario con sesión iniciada que está guardada en la
+base de datos para rellenar el formulario de cambio de información con
+los datos actuales del mismo. Por otro lado, en el foro, se utilizan
+los métodos de las clases \texttt{ForumThread} y
+\texttt{ForumResponse} para mostrar toda la información de hilos y
+respuestas que está almacenada en la base de datos.\\
+
+Una vez visto todo el código en PHP que se ha desarrollado para la
+página web, pasamos a ver el código en JavaScript.
+
+\section{Código en JavaScript de lado del cliente}
+
+El código que se ha desarrollado en JavaScript se utiliza
+principalmente para la validación de formularios, así como para
+mostrar en el foro la información relativa a los hilos creados por un
+usuario. Todo el código en JavaScript se encuentra en la carpeta
+\texttt{/static/js}. El primer archivo que vamos a comentar es
+\texttt{jquery-3.3.1.min.js}. Este archivo es el correspondiente a la
+librería JQuery, que es la que se ha usado para desarrollar el
+código. Se ha optado por usar esta librería por varias cosas. La
+primera de ellas, es la posibilidad de usar AJAX de una forma mucho
+más simple que con JavaScript puro. JQuery proporciona una función
+llamada \texttt{ajax()}, la cual recibe como parámetro un diccionario
+con el nombre del script PHP al que se envía la información, la
+información que se quiere enviar vía POST, y opcionalmente el
+comportamiento que se quiere provocar en caso de que la petición tenga
+éxito o falle. Otra de las ventajas del uso de JQuery es la
+simplicidad que tiene para seleccionar elementos del DOM. En lugar de
+tener que usar las funciones \texttt{document.getElementById()},
+\texttt{document.getElementsByClassName()}..., en JQuery se unifica
+todo este comportamiento con lo que se llaman selectores
+(\texttt{Selectors}). Permiten la selección de forma muy simple
+mediante la sintaxis \texttt{\$(<selector>)}, donde \texttt{selector}
+es una cadena de texto que identifica al elemento que queremos
+seleccionar.  Este selector puede hacer referencia al id del objeto, a
+su clase, a su nombre... Finalmente, el sistema de eventos del que se
+dispone es muy potente, para el que se usa la sintaxis
+\texttt{\$(<selector>).<event>( function () \{...\} )}. Esto permite
+asociar una función a un objeto (el seleccionado por
+\texttt{selector}), la cual se realiza cuando tiene lugar el evento
+indicado por \texttt{<event>}. De esta manera, podremos asociar
+funciones a los distintos eventos que tengan lugar en la página, como
+el envío de un formulario (evento \texttt{submit}), o cuando se pase
+el ratón
+por encima de una imagen en el foro (evento \texttt{hover}).\\
+
+Pasamos a comentar los scripts de JavaScript que han sido
+implementados para la página. El primer script que comentaremos es
+\texttt{manageLogin.js}. Este script se encarga de manejar el evento
+que se produce cuando se manda el formulario de identificación de
+usuario. Este script recoge los datos del formulario (usuario y
+contraseña introducidos) y manda una petición AJAX al archivo PHP
+\texttt{log\_user.php}. Una vez terminada la petición AJAX, si la
+misma ha sido realizada con éxito, comprueba la respuesta que ha
+mandado el script PHP. Si la misma ha sido satisfactoria, es decir, si
+el usuario se ha identificado correctamente, se recarga la página en
+la que se encontrase el usuario. En caso contrario, se muestra una
+alerta indicando que el usuario y la contraseña introducidos no son
+correctos, sin necesidad de recargar la página. La ventaja de hacer
+esto es, por un lado, mejorar la experiencia del usuario no
+introduciendo esperas innecesarias, y por otro, reducir la carga del
+servidor, al no tener que enviar una petición para recargar la
 página.\\
 
-En la versión móvil, lo que se ha intentado, es colocar los elementos
-que aparecen alineados horizontalmente en la versión de escritorio
-colocados en vertical. Esto se ha hecho porque, usualmente, los usuarios
-que acceden a una web desde un móvil lo hacen con el móvil colocado
-en vertical, al contrario que pasa con las pantallas de escritorio,
-que tienen una disposición apaisada. De esta forma, en la versión
-de escritorio en la pantalla de actividades aparece el listado de
-actividades a la izquierda y el de noticias a la derecha, mientras
-que en la versión móvil aparecen arriba las actividades y debajo las
-noticias.
+El siguiente archivo que comentaremos es \texttt{signUp.js}. Este
+archivo se encarga de validar el formulario de alta de usuario.
+Recoge todos los datos introducidos en el formulario cuando se pulsa
+el botón de enviar. Comprueba que ninguno de ellos es vacío o
+incorrecto, y en caso de que todos sean correctos manda una petición
+AJAX al script de PHP \texttt{sign\_up.php}, mandándole todos los
+datos del formulario por POST. En caso de que algún dato esté mal,
+bien porque no se ha introducido, bien porque haya algún error en el
+mismo, el script modifica el CSS del elemento en cuestión, haciendo
+que el borde se ponga rojo, y mostrando debajo un mensaje indicando el
+error que se ha cometido. En caso de que haya algún error, la petición
+AJAX indicada anteriormente no se realiza, si no que se deja al
+usuario corregir los errores antes de enviarla, todo esto sin recargar
+la página. Los errores que se han contemplado son los siguientes:
 
-\section{Aspectos de implementación}
+\begin{itemize}
+\item Cualquiera de los campos obligatorios está vacío.
+\item No se ha subido una foto.
+\item La dirección de correo introducida no es una dirección de correo
+  válida. Para esto, se ha tomado una expresión regular que comprueba
+  si una cadena de texto tiene el formato de una dirección de correo
+  electrónico (una cadena de caracteres seguida de una \@ y seguida de
+  otra cadena de caracteres en la que al menos hay un punto)
+\item La contraseña introducida es demasiado corta. Se considera que
+  una contraseña con menos de 8 caracteres es corta, y no se acepta en
+  el sistema.
+\item Las dos contraseñas indtroducidas no coinciden. Se pide, por
+  seguridad, que el usuario introduzca dos veces la contraseña. Si las
+  dos contraseñas que ha introducido no coinciden, se considera que el
+  usuario se ha equivocado y se le pide que las vuelva a introducir.
+\item Los teléfonos móvil y fijo introducidos no son válidos. Se
+  considera que un teléfono es válido si se corresponde con una cadena
+  de caracteres compuesta por un signo + al princpio (opcional)
+  seguido de dígitos numéricos. De nuevo se usa una expresión regular
+  para esta comprobación.
+\end{itemize}
 
-El desarrollo de la práctica se ha realizado utilizando las
-herramientas de desarrollador que aporta \textit{Google Chrome}. Estas
-herramientas permiten cambiar, de forma cómoda, el tamaño de la
-pantalla en la que se mostraría la página. Esto permite visualizar de
-forma sencilla la página en distintos dispositivos, sin necesidad de
-tener los mismos físicamente. Es con esta herramienta con la que se ha
-trabajado para tratar de hacer una página \textit{responsive}.  Se ha
-probado la misma en todas las opciones que el navegador incluye por
-defecto, y se ha comprobado que la página se comporta bien en todas
-ellas. De esta forma podemos garantizar, de forma más o menos segura,
-que vamos a poder visualizarla correctamente en cualquier dispositivo.
-No obstante, la visualización perfecta en todos ellos es difícil de
-garantizar completamente al desarrollar el CSS completamente desde
-cero.\\
+Pasamos ahora a comentar el script \texttt{updateUser.js}. Este script
+es muy similar al anterior, hace las mismas comprobaciones, y si todo
+es correcto envía una petición AJAX al archivo
+\texttt{update\_user.php}.  De nuevo, si hay algún error, tiene el
+mismo comportamiento que el script
+anterior.\\
 
-En cuanto al comportamiento responsive de la página, se ha seguido una
-filosofía similar a la que sigue \textit{Bootstrap} en su desarrollo.
-Lo que se hace es tener en cuenta el ancho de la pantalla para
-redimensionar los elementos, mientras que en vertical se mantienen
-los tamaños independientemente de la altura del dispositivo. Esto se
-hace porque suele ser más natural el \textit{scroll} vertical que
-el horizontal.
-
-\section{Uso de imágenes en la práctica}
-
-El logotipo que se utiliza en la cabecera está sacado de una página
-que distribuye imágenes vectoriales de uso comercial llamada
-\textit{Vecteezy} \cite{vecteezy}. La foto que aparece en la página
-principal fue subida por Justyn Warner a \textit{Unsplash} \cite{unsplash}.\\
-
-El resto de imágenes están sacadas todas de dos páginas distinas, las
-cuales son \textit{Pixabay} \cite{pixabay} y \textit{Pexels}
-\cite{pexels}. Las tres páginas citadas ofrecen todas las imágenes con
-una licencia \textit{Creative Commons 0}, que permite el uso de las
-mismas de forma completamente libre, tanto para uso comercial como no
-comercial, sin necesidad de citar a los autores de las mismas en el
-trabajo final. No obstante, se ha considerado correcto citar las
-fuentes por si fuera necesario comprobar la procedencia de las mismas.
+Pasamos ahora a comentar los scripts que gestionan el comportamiento
+del foro. Aquí tenemos dos archivos para gestionar formularios y uno
+para gestionar el evento de pasar el ratón por encima de la imagen de
+un usuario en el foro. Comenzamos por la gestión de formularios.
+Tenemos por un lado el script \texttt{createThread.js}, que gestiona
+la creación de un hilo nuevo. Este archivo recoge el título y la
+descripción del mismo que se introducen en el formulario cuando se
+envía el mismo, comprueba que ninguno de los dos es vacío, y en caso
+de ser ambos correctos manda una petición AJAX al servidor, al archivo
+\texttt{create-thread.php}, para guardar ese hilo en la base de datos.
+El otro script que tenemos para gestionar formularios del foro es
+\texttt{createResponse.js}. Este archivo se encarga de manejar los
+formularios que permiten introducir respuestas a los hilos del foro.
+En este archivo hay una pequeña diferencia que no teníamos en todos
+los demás archivos. Para la gestión de los hilos, el identificador del
+hilo se manda por GET en lugar de por POST, es decir, en la URL en
+cuestión. Esto se hace para que los enlaces que identifican hilos en
+la página web puedan ser enviados por métodos externos y aún así esté
+perfectamente identificado el hilo al que nos referimos. Por ejemplo,
+se podría querer mandar por correo electrónico la URL que muestra la
+información relativa al hilo con identificador $n$. En este caso, la
+URL en cuestión sería
+\texttt{betatun.ugr.es/\textasciitilde x31008316/centrodeportivoII/hilo.php?thread\_id=n}.
 
 \section{Bibliografía}
 
